@@ -28,9 +28,9 @@ brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
+    echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells
+    chsh -s "${BREW_PREFIX}/bin/bash"
+fi
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -52,7 +52,6 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
@@ -69,6 +68,8 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+
+brew cask install visual-studio-code
 
 # Remove outdated versions from the cellar.
 brew cleanup
