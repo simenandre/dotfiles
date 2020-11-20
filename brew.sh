@@ -51,6 +51,9 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
+# Programming languages
+brew install golang
+
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
