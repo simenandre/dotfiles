@@ -1,0 +1,63 @@
+{
+    "window.zoomLevel": 0,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "workbench.activityBar.visible": true,
+    "git.autofetch": true,
+    "editor.fontSize": 18,
+    "editor.fontFamily": "Menlo, Consolas, DejaVu Sans Mono, monospace",
+    "git.confirmSync": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "python.jediEnabled": false,
+    "tslint.packageManager": "yarn",
+    "git.enableSmartCommit": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "gitlens.codeLens.enabled": false,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "iceyer.toml-formatter"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.buildOnSave": "workspace",
+    "python.languageServer": "Microsoft",
+    "debug.javascript.breakOnConditionalError": true,
+    "debug.javascript.autoAttachFilter": "smart",
+    "debug.javascript.usePreview": false
+}
