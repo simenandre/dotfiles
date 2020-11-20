@@ -74,6 +74,7 @@ brew install zopfli
 # Tooling
 brew cask install visual-studio-code
 brew cask install iterm2
+brew cask install spotify
 
 # Remove outdated versions from the cellar.
 brew cleanup
