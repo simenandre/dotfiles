@@ -21,7 +21,8 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+#TODO: Replace with a way that replaced built-in
+#brew install gnu-sed --with-default-names
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
@@ -48,7 +49,7 @@ brew install gmp
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
-brew install sfnt2woff-zopfli
+brew install sfnt2woff-zopfli 
 brew install woff2
 
 # Programming languages
@@ -72,14 +73,25 @@ brew install vbindiff
 brew install zopfli
 
 # Tooling
+brew cask install google-chrome
+brew cask install google-drive-file-stream
+brew cask install adobe-creative-cloud
 brew cask install visual-studio-code
 brew cask install iterm2
 brew cask install spotify
 brew cask install memory
 brew cask install slack
 
+# Github CLI
+brew install gh
+
+# My tools
 brew install cobraz/tools/trippl-timely
+
 brew install emacs
+
+# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook qlvideo
 
 # Remove outdated versions from the cellar.
 brew cleanup
