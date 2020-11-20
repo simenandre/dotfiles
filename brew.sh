@@ -76,8 +76,10 @@ brew cask install visual-studio-code
 brew cask install iterm2
 brew cask install spotify
 brew cask install memory
+brew cask install slack
 
 brew install cobraz/tools/trippl-timely
+brew install emacs
 
 # Remove outdated versions from the cellar.
 brew cleanup
