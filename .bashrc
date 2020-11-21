@@ -35,6 +35,8 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
     /usr/bin/ssh-add -K
 fi
 
+/usr/bin/ssh-add -K
+
 # TODO: Fix /dev/fd/13:type:12979: bad option: -t issue
 # source kubectl bash completion
 # if hash kubectl 2>/dev/null; then
