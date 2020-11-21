@@ -71,6 +71,7 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+brew install ghq
 
 # Tooling
 brew cask install google-chrome
@@ -81,6 +82,7 @@ brew cask install iterm2
 brew cask install spotify
 brew cask install memory
 brew cask install slack
+brew cask install docker
 
 # Github CLI
 brew install gh
