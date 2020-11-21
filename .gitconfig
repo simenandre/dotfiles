@@ -1,0 +1,49 @@
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[core]
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	editor = emacs
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+	# Detect copies as well as renames
+	renames = copies
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[gpg]
+	program = gpg
+[user]
+	name = Simen A. W. Olsen
+	email = so@bjerk.io
+[github]
+	user = cobraz

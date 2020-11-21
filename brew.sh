@@ -72,12 +72,15 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 brew install ghq
+brew install kubectl
+brew install emacs
 
 # Tooling
 brew cask install google-chrome
 brew cask install google-drive-file-stream
 brew cask install adobe-creative-cloud
 brew cask install visual-studio-code
+brew cask install google-cloud-sdk
 brew cask install iterm2
 brew cask install spotify
 brew cask install memory
@@ -89,8 +92,6 @@ brew install gh
 
 # My tools
 brew install cobraz/tools/trippl-timely
-
-brew install emacs
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook qlvideo

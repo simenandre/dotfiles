@@ -12,14 +12,8 @@ ZSH_THEME="avit"
 
 plugins=(
   git
-  yarn 
-  web-search 
-  jsontools
-  macports
-  node 
-  osx 
+  osx
   sudo
-  thor
   docker
 )
 
@@ -83,31 +77,14 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 # Colorise the top Tabs of Iterm2 with the same color as background
 # Just change the 18/26/33 wich are the rgb values 
-echo -e "\033]6;1;bg;red;brightness;18\a"
-echo -e "\033]6;1;bg;green;brightness;26\a"
-echo -e "\033]6;1;bg;blue;brightness;33\a"
-
-# Add VSCode to PATH
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-# Golang
-export PATH="$PATH:$GOPATH/bin"
-
-# The next line updates PATH for Netlify's Git Credential Helper.
-if [ -f '/Users/cobraz/.netlify/helper/path.zsh.inc' ]; then source '/Users/cobraz/.netlify/helper/path.zsh.inc'; fi
+# echo -e "\033]6;1;bg;red;brightness;18\a"
+# echo -e "\033]6;1;bg;green;brightness;26\a"
+# echo -e "\033]6;1;bg;blue;brightness;33\a"
 
 autoload -U add-zsh-hook
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cobraz/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cobraz/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/cobraz/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cobraz/google-cloud-sdk/completion.zsh.inc'; fi
-
-export VISUAL="emacs"
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# Load .bashrc,
+if [[ -r "${HOME}/.bashrc" ]]; then
+	# shellcheck source=/dev/null
+	source "${HOME}/.bashrc"
+fi
