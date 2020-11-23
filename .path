@@ -3,6 +3,8 @@
 export PATH="/usr/local/sbin:$PATH"
 export GOPATH=~/go
 
+export REPOS=~/ghq
+
 # Golang
 export PATH="$PATH:$GOPATH/bin"
 
