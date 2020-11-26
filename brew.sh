@@ -48,6 +48,7 @@ brew install gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
+brew tap homebrew/cask-drivers
 brew install sfnt2woff
 brew install sfnt2woff-zopfli 
 brew install woff2
@@ -86,6 +87,8 @@ brew cask install spotify
 brew cask install memory
 brew cask install slack
 brew cask install docker
+brew cask install postman
+brew cask install sonos
 
 # Github CLI
 brew install gh

@@ -36,14 +36,14 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
-[commit]
-	gpgsign = true
-[pull]
-	rebase = true
-[gpg]
-	program = gpg
+#[commit]
+#	gpgsign = true
+#[pull]
+#	rebase = true
+# [gpg]
+# 	program = gpg
 [user]
 	name = Simen A. W. Olsen
-	email = so@bjerk.io
+	email = cobraz@cobraz.no
 [github]
 	user = cobraz
