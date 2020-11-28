@@ -89,6 +89,7 @@ brew cask install slack
 brew cask install docker
 brew cask install postman
 brew cask install sonos
+brew cask install tunnelblick
 
 # Github CLI
 brew install gh
