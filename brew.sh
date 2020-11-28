@@ -75,6 +75,7 @@ brew install zopfli
 brew install ghq
 brew install kubectl
 brew install emacs
+brew install nmap
 
 # Tooling
 brew cask install google-chrome
