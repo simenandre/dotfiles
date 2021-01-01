@@ -55,6 +55,7 @@ brew install woff2
 
 # Programming languages
 brew install golang
+brew install adoptopenjdk8
 
 # Install other useful binaries.
 brew install ack
@@ -78,6 +79,9 @@ brew install emacs
 brew install nmap
 brew install pulumi
 brew install figma
+brew tap bufbuild/buf
+brew install buf
+brew install clang-format
 
 # Tooling
 brew cask install google-chrome
@@ -93,6 +97,8 @@ brew cask install docker
 brew cask install postman
 brew cask install sonos
 brew cask install tunnelblick
+brew install discord
+brew install fork-cleaner
 
 # Github CLI
 brew install gh
