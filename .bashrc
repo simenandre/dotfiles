@@ -32,10 +32,14 @@ export GPG_TTY
 # Shell
 if [ -z "$SSH_AUTH_SOCK" ] ; then
     eval `ssh-agent -s`
-    /usr/bin/ssh-add -K
+    {
+		/usr/bin/ssh-add -K
+	} &> /dev/null
 fi
 
-/usr/bin/ssh-add -K
+{
+	/usr/bin/ssh-add -K
+} &> /dev/null
 
 # TODO: Fix /dev/fd/13:type:12979: bad option: -t issue
 # source kubectl bash completion

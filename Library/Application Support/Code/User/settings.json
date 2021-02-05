@@ -59,5 +59,11 @@
     "python.languageServer": "Microsoft",
     "debug.javascript.breakOnConditionalError": true,
     "debug.javascript.autoAttachFilter": "smart",
-    "debug.javascript.usePreview": false
+    "debug.javascript.usePreview": false,
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    }
 }

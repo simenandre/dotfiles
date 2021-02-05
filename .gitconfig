@@ -44,6 +44,8 @@
 # 	program = gpg
 [user]
 	name = Simen A. W. Olsen
-	email = cobraz@cobraz.no
+	email = so@bjerk.io
 [github]
 	user = cobraz
+[pull]
+	rebase = true
