@@ -58,6 +58,7 @@ brew "emacs"
 brew "nmap"
 brew "pulumi"
 brew "fork-cleaner"
+brew "whalebrew"
 
 tap "bufbuild/buf"
 brew "buf"
@@ -80,6 +81,7 @@ cask "tunnelblick"
 cask "drawio"
 cask "figma"
 cask "discord"
+
 
 # My tools
 brew "cobraz/tools/trippl-timely"
