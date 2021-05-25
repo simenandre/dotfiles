@@ -59,10 +59,19 @@ brew "nmap"
 brew "pulumi"
 brew "fork-cleaner"
 brew "whalebrew"
+brew "helm"
 
 tap "bufbuild/buf"
 brew "buf"
 brew "clang-format"
+
+# Pulumi ❤️
+tap "pulumi/tap"
+brew "pulumi"
+brew "crd2pulumi"
+brew "kube2pulumi"
+brew "pulumictl"
+brew "tf2pulumi"
 
 # Tooling
 cask "google-chrome"
