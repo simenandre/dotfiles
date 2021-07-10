@@ -60,6 +60,8 @@ brew "pulumi"
 brew "fork-cleaner"
 brew "whalebrew"
 brew "helm"
+brew "gh"
+brew "microplane"
 
 tap "bufbuild/buf"
 brew "buf"
@@ -90,7 +92,6 @@ cask "tunnelblick"
 cask "drawio"
 cask "figma"
 cask "discord"
-
 
 # My tools
 brew "cobraz/tools/trippl-timely"
