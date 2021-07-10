@@ -70,5 +70,6 @@
     },
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "security.workspace.trust.untrustedFiles": "open"
 }
