@@ -63,6 +63,9 @@ brew "helm"
 brew "gh"
 brew "microplane"
 
+tap "txn2/tap"
+brew "kubefwd"
+
 tap "bufbuild/buf"
 brew "buf"
 brew "clang-format"
