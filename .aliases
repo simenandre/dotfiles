@@ -1,0 +1,9 @@
+# Git aliases
+alias git-unpushed='git log --branches --not --remotes --no-walk --decorate --oneline'
+alias gb='git checkout -b'
+alias gfr='git fetch upstream && git rebase upstream/master'
+
+# Generic / Random / Utility
+alias repos='cd $REPOS/github.com/'
+alias c='clear'
+alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
