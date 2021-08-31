@@ -96,6 +96,10 @@ cask "drawio"
 cask "figma"
 cask "discord"
 
+# Taskfile
+tap "go-task/tap"
+brew "go-task"
+
 # My tools
 brew "cobraz/tools/trippl-timely"
 
