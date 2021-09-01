@@ -5,6 +5,17 @@ alias gfr='git fetch upstream && git rebase upstream/master'
 alias git-undo='git reset --soft HEAD~1'
 
 # Generic / Random / Utility
-alias repos='cd $REPOS/github.com/'
+alias r='cd $REPOS/github.com/'
 alias c='clear'
 alias afk='pmset displaysleepnow'
+alias dl="cd ~/Downloads"
+alias l='ls -l'
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
+
+alias gcloud-configs="gcloud config configurations list"
+alias gcloud-set-config="gcloud config configurations activate"
