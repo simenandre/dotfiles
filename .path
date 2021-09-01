@@ -5,6 +5,9 @@ export GOPATH=~/go
 
 export REPOS=~/ghq
 
+# NPM Utilities
+export PATH="$PATH:$HOME/.utilities/node_modules/.bin"
+
 # Golang
 export PATH="$PATH:$GOPATH/bin"
 

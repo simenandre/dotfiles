@@ -1,0 +1,10 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Simen A. W. Olsen",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gcloud-config-select": "^1.0.0"
+  }
+}
