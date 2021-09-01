@@ -72,5 +72,18 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "security.workspace.trust.untrustedFiles": "open",
+    "[go]": {
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "go.toolsManagement.autoUpdate": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "redhat.telemetry.enabled": true
 }

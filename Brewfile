@@ -56,7 +56,6 @@ brew "ghq"
 brew "kubectl"
 brew "emacs"
 brew "nmap"
-brew "pulumi"
 brew "fork-cleaner"
 brew "whalebrew"
 brew "helm"
@@ -78,6 +77,10 @@ brew "kube2pulumi"
 brew "pulumictl"
 brew "tf2pulumi"
 
+# Taskfile.dev
+tap "go-task/tap"
+brew "go-task"
+
 # Tooling
 cask "google-chrome"
 cask "google-drive-file-stream"
@@ -95,6 +98,7 @@ cask "tunnelblick"
 cask "drawio"
 cask "figma"
 cask "discord"
+cask "alfred"
 
 # Taskfile
 tap "go-task/tap"
