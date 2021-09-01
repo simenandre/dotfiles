@@ -5,6 +5,6 @@
   "author": "Simen A. W. Olsen",
   "license": "Apache-2.0",
   "dependencies": {
-    "gcloud-config-select": "^1.0.0"
+    "gcloud-config-select": "^1.0.1"
   }
 }
