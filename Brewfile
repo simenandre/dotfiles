@@ -11,7 +11,7 @@ brew "gnu-sed"
 
 # Install a modern version of Bash.
 brew "bash"
-brew "bash-completion2"
+brew "bash-completion"
 
 # Install `wget` with IRI support.
 brew "wget"
@@ -61,6 +61,7 @@ brew "whalebrew"
 brew "helm"
 brew "gh"
 brew "microplane"
+brew "jq"
 
 tap "txn2/tap"
 brew "kubefwd"
