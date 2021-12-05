@@ -65,6 +65,9 @@ brew "microplane"
 tap "txn2/tap"
 brew "kubefwd"
 
+tap "sachaos/todoist"
+brew "todoist"
+
 tap "bufbuild/buf"
 brew "buf"
 brew "clang-format"
@@ -99,6 +102,10 @@ cask "drawio"
 cask "figma"
 cask "discord"
 cask "alfred"
+cask "todoist"
+
+# Freetime
+cask "steam"
 
 # Taskfile
 tap "go-task/tap"

@@ -10,6 +10,7 @@ alias c='clear'
 alias afk='pmset displaysleepnow'
 alias dl="cd ~/Downloads"
 alias l='ls -l'
+alias todo='todoist l'
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
