@@ -102,7 +102,6 @@ cask "drawio"
 cask "figma"
 cask "discord"
 cask "alfred"
-cask "todoist"
 
 # Freetime
 cask "steam"
