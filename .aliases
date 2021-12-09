@@ -3,6 +3,7 @@ alias git-unpushed='git log --branches --not --remotes --no-walk --decorate --on
 alias gb='git checkout -b'
 alias gfr='git fetch upstream && git rebase upstream/master'
 alias git-undo='git reset --soft HEAD~1'
+alias git-clean-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
 
 # Generic / Random / Utility
 alias r='cd $REPOS/github.com/'
@@ -20,3 +21,7 @@ alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
 
 alias gcloud-configs="gcloud config configurations list"
 alias gcloud-set-config="gcloud config configurations activate"
+
+alias ❤️="slack chat send 'Jeg elsker deg :heart:' DDWDSR9S4"
+alias ♥="slack chat send 'Jeg elsker deg :heart:' DDWDSR9S4"
+alias ilu='slack chat send "Jeg elsker deg :heart:" DDWDSR9S4'

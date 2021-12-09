@@ -55,7 +55,7 @@
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "go.buildOnSave": "workspace",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "debug.javascript.breakOnConditionalError": true,
     "debug.javascript.autoAttachFilter": "smart",
     "debug.javascript.usePreview": false,
@@ -85,5 +85,6 @@
     "workbench.editor.untitled.hint": "hidden",
     "go.toolsManagement.autoUpdate": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "redhat.telemetry.enabled": true
+    "redhat.telemetry.enabled": true,
+    "workbench.startupEditor": "none"
 }
