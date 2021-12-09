@@ -21,7 +21,3 @@ alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
 
 alias gcloud-configs="gcloud config configurations list"
 alias gcloud-set-config="gcloud config configurations activate"
-
-alias ❤️="slack chat send 'Jeg elsker deg :heart:' DDWDSR9S4"
-alias ♥="slack chat send 'Jeg elsker deg :heart:' DDWDSR9S4"
-alias ilu='slack chat send "Jeg elsker deg :heart:" DDWDSR9S4'
