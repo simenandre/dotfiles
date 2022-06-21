@@ -102,7 +102,6 @@ cask "tunnelblick"
 cask "drawio"
 cask "figma"
 cask "discord"
-cask "alfred"
 
 # Freetime
 cask "steam"
