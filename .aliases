@@ -1,6 +1,6 @@
 # Git aliases
 alias git-unpushed='git log --branches --not --remotes --no-walk --decorate --oneline'
-alias gb='git checkout -b'
+alias gb='git checkout -b $1 main'
 alias gfr='git fetch upstream && git rebase upstream/master'
 alias git-undo='git reset --soft HEAD~1'
 alias git-clean-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
