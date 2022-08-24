@@ -20,6 +20,8 @@ esac
 GPG_TTY=$(tty)
 export GPG_TTY
 
+USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # Set SSH to use gpg-agent
 # unset SSH_AGENT_PID
 # if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
