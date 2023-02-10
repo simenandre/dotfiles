@@ -26,3 +26,4 @@ if [ -f "$HOME/.netlify/helper/path.zsh.inc" ]; then source "$HOME/.netlify/help
 
 # Add VSCode to PATH
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

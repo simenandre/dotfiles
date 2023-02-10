@@ -1,32 +1,40 @@
 brew "mas"
 
-
-# Install some other useful utilities like `sponge`.
+# Some other useful utilities like `sponge` and `yadm`
 brew "moreutils"
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew "yadm"
+
+# GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew "findutils"
 
-# Install GNU `sed`, overwriting the built-in `sed`.
+# GNU `sed`, overwriting the built-in `sed`.
 brew "gnu-sed"
 
-# Install a modern version of Bash.
+# Modern version of Bash.
 brew "bash"
 brew "bash-completion"
+brew "bash-completion@2", link: false # Not sure if this is needed
 
-# Install `wget` with IRI support.
+# `wget` with IRI support.
 brew "wget"
 
-# Install GnuPG to enable PGP-signing commits.
+# GnuPG to enable PGP-signing commits.
 brew "gnupg"
 
-# Install more recent versions of some macOS tools.
+# Libraries
+brew "lz4"
+brew "zlib"
+brew "zstd"
+brew "libffi"
+
+# more recent versions of some macOS tools.
 brew "vim"
 brew "grep"
 brew "openssh"
 brew "screen"
 brew "gmp"
 
-# Install font tools
+# Font tools
 tap "bramstein/webfonttools"
 tap "homebrew/cask-drivers"
 brew "sfnt2woff"
@@ -35,7 +43,8 @@ brew "woff2"
 
 # Programming languages
 brew "golang"
-cask "adoptopenjdk8"
+brew "python@3.10"
+brew "rust"
 
 # Other useful binaries
 brew "ack"
@@ -62,18 +71,18 @@ brew "helm"
 brew "gh"
 brew "microplane"
 brew "jq"
+brew "rclone"
+brew "asciinema"
+brew "goreleaser"
+brew "caddy"
+brew "git-secret"
+brew "pnpm"
+brew "tmate"
+brew "doctl"
+brew "cilium-cli"
+brew "act"
 
-tap "txn2/tap"
-brew "kubefwd"
-
-tap "sachaos/todoist"
-brew "todoist"
-
-tap "bufbuild/buf"
-brew "buf"
-brew "clang-format"
-
-# Pulumi ❤️
+# Active taps: Pulumi ❤️
 tap "pulumi/tap"
 brew "pulumi"
 brew "crd2pulumi"
@@ -81,37 +90,64 @@ brew "kube2pulumi"
 brew "pulumictl"
 brew "tf2pulumi"
 
-# Taskfile.dev
+## Taskfile.dev
 tap "go-task/tap"
 brew "go-task"
 
-# Tooling
-cask "google-chrome"
-cask "google-drive-file-stream"
-cask "adobe-creative-cloud"
-cask "visual-studio-code"
-cask "google-cloud-sdk"
-cask "iterm2"
-cask "spotify"
-cask "memory"
-cask "slack"
-cask "docker"
-cask "postman"
-cask "sonos"
-cask "tunnelblick"
-cask "drawio"
-cask "figma"
-cask "discord"
+## Buf
+tap "bufbuild/buf"
+brew "buf"
+brew "clang-format"
 
-# Freetime
-cask "steam"
+## Minio
+tap "minio/stable"
+brew "mc"
 
 # Taskfile
 tap "go-task/tap"
 brew "go-task"
 
-# My tools
-brew "cobraz/tools/trippl-timely"
+# Actively used applications
+cask "google-drive"
+cask "google-chrome"
+cask "google-drive-file-stream"
+cask "visual-studio-code"
+cask "google-cloud-sdk"
+cask "spotify"
+cask "memory"
+cask "slack"
+cask "postman"
+cask "sonos"
+cask "drawio"
+cask "figma"
+cask "discord"
+cask "warp"
+cask "steam"
+cask "grammarly"
+cask "microsoft-remote-desktop"
+cask "minecraft"
+cask "postico"
+cask "cyberduck"
+cask "pandoc"
+cask "todoist"
 
-# Mac Application
-mas "gifski", id: 1351639930
+# Deprecated applications
+cask "iterm2" # Expires at 2022-04-01?
+cask "tunnelblick" # Expires at 2022-04-01?
+cask "docker" # Expires at 2022-04-01?
+cask "adobe-creative-cloud" # Expires at 2023-04-01?
+
+# My tools
+tap "cobraz/tools"
+brew "trippl-timely"
+brew "xlsx-mxlookup"
+
+# App Store applications
+mas "Bitwarden", id: 1352778147
+mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
+mas "LanScan", id: 472226235
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Outline", id: 1356178125
+mas "Remote Desktop", id: 409907375
+mas "SonicWall Mobile Connect", id: 822514576
