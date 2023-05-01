@@ -103,6 +103,15 @@ brew "clang-format"
 tap "minio/stable"
 brew "mc"
 
+# Container-related tools
+brew "podman"
+brew "podman-compose"
+cask "podman-desktop"
+
+# Tools to keep us up to date
+tap "frdmn/formulas"
+brew "homebrew-update-notifier" # Remember to run: brew services start homebrew-update-notifier
+
 # Taskfile
 tap "go-task/tap"
 brew "go-task"
@@ -132,9 +141,6 @@ cask "pandoc"
 cask "todoist"
 
 # Deprecated applications
-cask "iterm2" # Expires at 2022-04-01?
-cask "tunnelblick" # Expires at 2022-04-01?
-cask "docker" # Expires at 2022-04-01?
 cask "adobe-creative-cloud" # Expires at 2023-04-01?
 
 # My tools
