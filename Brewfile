@@ -141,7 +141,7 @@ cask "pandoc"
 cask "todoist"
 
 # Deprecated applications
-cask "adobe-creative-cloud" # Expires at 2023-04-01?
+# --> Currently none 😎
 
 # My tools
 tap "cobraz/tools"
