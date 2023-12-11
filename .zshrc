@@ -99,10 +99,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 if [[ -r "${HOME}/.bashrc" ]]; then
 	# shellcheck source=/dev/null
 	source "${HOME}/.bashrc"
 fi
+
+# pnpm
+export PNPM_HOME="/Users/cobraz/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
