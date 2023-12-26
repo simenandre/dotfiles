@@ -75,6 +75,7 @@ brew "git-secret"
 brew "tmate"
 brew "doctl"
 brew "act"
+cask "hammerspoon"
 
 # Javascript Runtimes and tools 
 tap "oven-sh/bun"

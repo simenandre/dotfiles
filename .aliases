@@ -15,6 +15,7 @@ alias todo='todoist l --filter "#Inbox"'
 alias docker=podman
 alias docker-compose=podman-compose
 alias today="open 'obsidian://advanced-uri?daily=true'"
+alias tre='tree --gitignore'
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
