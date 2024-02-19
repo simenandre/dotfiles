@@ -1,27 +1,26 @@
 # Git aliases
 alias git-unpushed='git log --branches --not --remotes --no-walk --decorate --oneline'
 alias gb='git checkout -b'
-alias gfr='git fetch upstream && git rebase upstream/master'
+alias gfr='git fetch upstream && git rebase upstream/main'
 alias git-undo='git reset --soft HEAD~1'
 alias git-clean-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
 
 # Generic / Random / Utility
+alias rg="rg --hidden --glob '!.git' --glob '!node_modules'"
 alias r='cd $REPOS/github.com/'
 alias c='clear'
 alias afk='pmset displaysleepnow'
 alias dl="cd ~/Downloads"
 alias l='ls -l'
-alias todo='todoist l --filter "#Inbox"' 
-alias docker=podman
-alias docker-compose=podman-compose
+alias todo='nt'
+alias tasks="open 'obsidian://open?file=-%20Oppgaver'"
+alias todos="mt ~/ghq/github.com/simenandre/notes/ && echo '\n\nÅpne i Obsidian: tasks'"
+# alias docker-compose=podman-compose
 alias today="open 'obsidian://advanced-uri?daily=true'"
 alias tre='tree --gitignore'
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
+alias timeliste="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
+alias t="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
 alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
-
-alias gcloud-configs="gcloud config configurations list"
-alias gcloud-set-config="gcloud config configurations activate"
+alias vi="nvim"
+alias vim="nvim"
+alias v="nvim"

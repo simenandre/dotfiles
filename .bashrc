@@ -22,8 +22,7 @@ fi
 	/usr/bin/ssh-add -K
 } &>/dev/null
 
-# Set Emacs as VISUAL
-export VISUAL="emacs"
+export VISUAL="nvim"
 
 for file in ~/.{aliases,path,extras}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then

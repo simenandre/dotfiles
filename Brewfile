@@ -3,6 +3,7 @@ brew "mas"
 brew "ghq"
 brew "moreutils"
 brew "yadm"
+brew "zsh"
 
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew "findutils"
@@ -47,6 +48,7 @@ brew "python@3.10"
 brew "rust"
 
 # Other useful binaries
+brew "ripgrep"
 brew "ack"
 brew "git"
 brew "git-lfs"
@@ -76,6 +78,7 @@ brew "tmate"
 brew "doctl"
 brew "act"
 cask "hammerspoon"
+cask "karabiner-elements"
 
 # Javascript Runtimes and tools 
 tap "oven-sh/bun"
