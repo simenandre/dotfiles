@@ -1,0 +1,14 @@
+NOTES_DIR=$HOME/ghq/github.com/simenandre/notes/
+function note() {
+  if [ $1 ]; then
+    echo $1 >> $NOTES_DIR/$(date +%Y-%m-%d).md 
+  fi
+}
+
+function nt() {
+  if [ $1 ]; then
+    CONTENT="- [ ] $1"
+    note $CONTENT
+  fi
+}
+
