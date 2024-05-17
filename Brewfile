@@ -46,6 +46,10 @@ brew "woff2"
 brew "golang"
 brew "python@3.10"
 brew "rust"
+brew "zig"
+
+# Restish
+brew "danielgtaylor/restish/restish"
 
 # Other useful binaries
 brew "ripgrep"
@@ -79,6 +83,8 @@ brew "doctl"
 brew "act"
 cask "hammerspoon"
 cask "karabiner-elements"
+brew "dasel"
+brew "tmux"
 
 # Javascript Runtimes and tools 
 tap "oven-sh/bun"
@@ -141,6 +147,8 @@ cask "adobe-creative-cloud"
 cask "1password"
 cask "openvpn-connect"
 cask "devtoys"
+cask "raycast"
+
 
 # Obsidian stuff
 cask "obsidian"

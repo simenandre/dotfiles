@@ -12,3 +12,9 @@ function nt() {
   fi
 }
 
+function getBjerkIssues() {
+  gh issue list --repo bjerkio/internal \
+    --search "-label:backlog -label:kind/system" \
+    --json title,body,url,createdAt,assignees,number,labels,comments \
+    --jq 'map({url, createdAt, title, labels: [.labels[].name], assignees: [.assignees[].login], body, number: "#\(.number)", comments: .comments | map({ body: .body, createdAt: .createdAt })})'
+}

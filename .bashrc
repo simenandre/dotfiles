@@ -31,3 +31,4 @@ for file in ~/.{aliases,path,extras}; do
 	fi
 done
 unset file
+. "$HOME/.cargo/env"

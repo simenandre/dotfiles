@@ -15,3 +15,4 @@ if [[ -r "${HOME}/.bashrc" ]]; then
 fi
 
 
+. "$HOME/.cargo/env"

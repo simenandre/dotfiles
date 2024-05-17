@@ -14,13 +14,16 @@ alias dl="cd ~/Downloads"
 alias l='ls -l'
 alias todo='nt'
 alias tasks="open 'obsidian://open?file=-%20Oppgaver'"
-alias todos="mt ~/ghq/github.com/simenandre/notes/ && echo '\n\nÅpne i Obsidian: tasks'"
+alias todos="mt ~/ghq/github.com/simenandre/notes/"
 # alias docker-compose=podman-compose
 alias today="open 'obsidian://advanced-uri?daily=true'"
-alias tre='tree --gitignore'
+alias tre="tree -I '.git|node_modules'"
 alias timeliste="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
 alias t="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
 alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
 alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
+
+alias dump-issues="getBjerkIssues > ~/Downloads/issues-$(date -I).json"
+
