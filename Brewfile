@@ -29,7 +29,6 @@ brew "zstd"
 brew "libffi"
 
 # more recent versions of some macOS tools.
-brew "vim"
 brew "grep"
 brew "openssh"
 brew "screen"
@@ -41,6 +40,8 @@ tap "homebrew/cask-drivers"
 brew "sfnt2woff"
 brew "sfnt2woff-zopfli"
 brew "woff2"
+cask "font-symbols-only-nerd-font"
+cask "font-jetbrains-mono"
 
 # Programming languages
 brew "golang"
@@ -73,6 +74,7 @@ brew "whalebrew"
 brew "gh"
 brew "microplane"
 brew "jq"
+brew "fzf"
 brew "rclone"
 brew "asciinema"
 brew "goreleaser"
@@ -81,10 +83,14 @@ brew "git-secret"
 brew "tmate"
 brew "doctl"
 brew "act"
-cask "hammerspoon"
 cask "karabiner-elements"
 brew "dasel"
-brew "tmux"
+brew "tldr"
+brew "pkl"
+brew "lazygit"
+brew "yq"
+tap "danielgtaylor/restish"
+brew "restish"
 
 # Javascript Runtimes and tools 
 tap "oven-sh/bun"
@@ -94,7 +100,7 @@ brew "volta"
 brew "corepack"
 brew "deno"
 
-# IaC
+# IaC / Cloud
 tap "pulumi/tap"
 brew "pulumi"
 brew "crd2pulumi"
@@ -104,8 +110,10 @@ brew "tf2pulumi"
 brew "esc"
 brew "helm"
 brew "cilium-cli"
+brew "azure-cli"
 
 # Container-related tools
+cask "docker"
 brew "podman"
 brew "podman-compose"
 cask "podman-desktop"
@@ -113,8 +121,6 @@ cask "podman-desktop"
 # Taskfile
 tap "go-task/tap"
 brew "go-task"
-
-brew "neovim"
 
 # Google stuff
 cask "google-chrome"
@@ -133,12 +139,12 @@ cask "zoom"
 # Actively used applications
 cask "visual-studio-code"
 cask "spotify"
-cask "memory"
+brew "neovim"
 cask "slack"
 cask "sonos"
+brew "tmux"
 cask "figma"
 cask "discord"
-cask "warp"
 cask "grammarly"
 cask "microsoft-remote-desktop"
 cask "postico"
@@ -146,9 +152,9 @@ cask "cyberduck"
 cask "adobe-creative-cloud"
 cask "1password"
 cask "openvpn-connect"
-cask "devtoys"
 cask "raycast"
-
+cask "wezterm" 
+cask "rectangle"
 
 # Obsidian stuff
 cask "obsidian"

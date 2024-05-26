@@ -4,6 +4,7 @@ alias gb='git checkout -b'
 alias gfr='git fetch upstream && git rebase upstream/main'
 alias git-undo='git reset --soft HEAD~1'
 alias git-clean-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
+alias :q='exit'
 
 # Generic / Random / Utility
 alias rg="rg --hidden --glob '!.git' --glob '!node_modules'"

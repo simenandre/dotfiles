@@ -1,4 +1,3 @@
--- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
@@ -65,8 +64,20 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.colorcolumn = "80"
+vim.opt.wrap = false
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+--
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

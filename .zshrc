@@ -16,3 +16,4 @@ fi
 
 
 . "$HOME/.cargo/env"
+autoload -U compinit; compinit
