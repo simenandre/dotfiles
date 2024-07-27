@@ -1,19 +1,21 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/cobraz/.oh-my-zsh"
+# Download Znap, if it's not there yet.
+[[ -r ~/.zsh_repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.zsh_repos/znap
+source ~/.zsh_repos/znap/znap.zsh  # Start Znap
+znap eval starship 'starship init zsh --print-full-init'
+znap prompt
 
-ZSH_THEME="robbyrussell"
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
 
-lugins=(git)
+for file in ~/.{aliases,path,extras}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		# shellcheck source=/dev/null
+		source "$file"
+	fi
+done
 
-source $ZSH/oh-my-zsh.sh
-if [[ -r "${HOME}/.bashrc" ]]; then
-	# shellcheck source=/dev/null
-	source "${HOME}/.bashrc"
-fi
-
-
-. "$HOME/.cargo/env"
-autoload -U compinit; compinit

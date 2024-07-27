@@ -137,7 +137,6 @@ return {
       vim.keymap.set("n", "<leader>/", function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-          winblend = 10,
           previewer = false,
         }))
       end, { desc = "[/] Fuzzily search in current buffer" })
@@ -320,7 +319,7 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -594,7 +593,23 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+      ensure_installed = {
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "lua",
+        "luadoc",
+        "markdown",
+        "vim",
+        "vimdoc",
+        "go",
+        "json",
+        "yaml",
+        "toml",
+        "gomod",
+        "gosum",
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -604,7 +619,7 @@ return {
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { "ruby" },
       },
-      indent = { enable = true, disable = { "ruby" } },
+      indent = { enable = true, disable = { "ruby", "go" } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
