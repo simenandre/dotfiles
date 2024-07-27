@@ -1,11 +1,13 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Download Znap, if it's not there yet.
 [[ -r ~/.zsh_repos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.zsh_repos/znap
 source ~/.zsh_repos/znap/znap.zsh  # Start Znap
+
+export GOPATH=~/go
+export REPOS=~/ghq
+
 znap eval starship 'starship init zsh --print-full-init'
 znap prompt
 
