@@ -14,7 +14,7 @@ znap prompt
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 
-for file in ~/.{aliases,path,extras}; do
+for file in ~/.{aliases.zsh,path.zsh,extras.zsh}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
