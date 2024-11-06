@@ -154,10 +154,6 @@ return {
       vim.keymap.set("n", "<leader>sn", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
       end, { desc = "[S]earch [N]eovim files" })
-
-      if vim.fn.argv(0) == "" then
-        builtin.find_files()
-      end
     end,
   },
 
@@ -216,7 +212,7 @@ return {
           -- In this case, we create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+            vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "lsp: " .. desc })
           end
 
           -- Jump to the definition of the word under your cursor.
@@ -328,7 +324,9 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
+        -- for astro
+
         --
 
         lua_ls = {
@@ -360,6 +358,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         "stylua", -- Used to format Lua code
+        "jsdoc",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -405,6 +404,9 @@ return {
       end,
       formatters_by_ft = {
         lua = { "stylua" },
+        go = { "gofmt", "goimports" },
+        css = { { "prettierd", "prettier" } },
+        -- html = { { "prettierd", "prettier" } },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -637,5 +639,44 @@ return {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-  "github/copilot.vim",
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>cs",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>xL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
+  },
 }
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
