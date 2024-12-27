@@ -18,6 +18,7 @@ stow git
 stow apps
 stow config
 stow tmux
+stow nvim
 
 # Install TPM for tmux
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
