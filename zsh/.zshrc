@@ -1,4 +1,3 @@
-
 # Download Znap, if it's not there yet.
 [[ -r ~/.zsh_repos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \

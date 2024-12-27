@@ -6,19 +6,19 @@ tap "oven-sh/bun"                      # Bun JavaScript runtime
 tap "pulumi/tap"                       # Pulumi infrastructure as code tools
 tap "go-task/tap"                      # Task runner for Go
 tap "tursodatabase/tap"                # Turso database tools
+tap "libsql/sqld"
 tap "yakitrak/yakitrak"                # Tap for yakitrak tools
 tap "simenandre/tools"                 # Tap for Simen Andre's tools
 
 # Mas
 brew "mas"                             # Mac App Store command-line interface
-mas "Outline", id: 1356178125          # Note-taking application
+mas "Outline", id: 1356178125          # Outline VPN
 mas "Remote Desktop", id: 409907375    # Microsoft Remote Desktop application
 
 # Shells and Shell Utilities
 brew "zsh"                             # Z shell
 brew "bash"                            # Modern version of Bash
 brew "bash-completion"                 # Bash completion
-brew "yadm"                            # Yet Another Dotfiles Manager
 brew "ghq"                             # Manage remote repository clones
 brew "moreutils"                       # Collection of additional Unix utilities
 
@@ -26,6 +26,7 @@ brew "moreutils"                       # Collection of additional Unix utilities
 brew "findutils"                       # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew "gnu-sed"                         # GNU `sed`, overwriting the built-in `sed`.
 brew "grep"                            # More recent version of macOS `grep`
+brew "stow"
 
 # Networking Tools
 brew "wget"                            # `wget` with IRI support.
@@ -48,9 +49,10 @@ brew "zopfli"                          # Compression tool
 
 # Programming Languages and Runtimes
 brew "golang"                          # Go programming language
-brew "python@3.10"                     # Python 3.10
+brew "python@3.11"                     # Python 3.11
 brew "rust"                            # Rust programming language
 brew "zig"                             # Zig programming language
+brew "pkl"                             # Configuration language
 
 # Font Tools
 brew "sfnt2woff"                       # Convert TTF to WOFF
@@ -94,6 +96,9 @@ brew "azure-cli"                       # Microsoft Azure command-line tool
 brew "kubectl"                         # Kubernetes command-line tool
 brew "helm"                            # Kubernetes package manager
 brew "cilium-cli"                      # CLI to install, manage & troubleshoot Kubernetes clusters
+cask "google-cloud-sdk"                # Google Cloud SDK
+brew "doctl"                           # DigitalOcean CLI
+brew "flyctl"                          # Fly.io CLI
 
 # Container Tools
 brew "podman"                          # Manage pods, containers, and container images
@@ -105,15 +110,16 @@ cask "podman-desktop"                  # Podman desktop
 brew "go-task"                         # Task runner for Go
 brew "act"                             # Run GitHub Actions locally
 
-# Databases
+# Databases and Database Tools
 brew "turso"                           # Turso database command-line tool
+brew "libpq"                           # PostgreSQL C library
+brew "sqld"                            # SQL daemon
 
 # Video Meeting Applications
 cask "microsoft-teams"                 # Microsoft Teams
 cask "zoom"                            # Zoom video conferencing
 
 # Applications
-cask "visual-studio-code"              # Visual Studio Code editor
 cask "spotify"                         # Spotify music streaming
 brew "neovim"                          # Hyperextensible Vim-based text editor
 cask "slack"                           # Slack messaging app
@@ -126,22 +132,33 @@ cask "microsoft-remote-desktop"        # Microsoft Remote Desktop app
 cask "postico"                         # PostgreSQL GUI client
 cask "cyberduck"                       # FTP and cloud storage browser
 cask "adobe-creative-cloud"            # Adobe Creative Cloud
-cask "1password"                       # 1Password password manager
+# TODO: Figure out how to handle 1password when it updates itself
+# cask "1password"                       # 1Password password manager
+cask "1password-cli"                   # 1Password command-line tool
+cask "protonvpn"                       # ProtonVPN client
 cask "openvpn-connect"                 # OpenVPN client
 cask "raycast"                         # Command launcher
-cask "wezterm"                         # Terminal emulator
 cask "rectangle"                       # Window management app
+cask "google-chrome"                   # Google Chrome browser
+cask "google-drive"                    # Google Drive
+cask "google-drive-file-stream"        # Google Drive for desktop
+cask "karabiner-elements"              # Keyboard customizer
+cask "postman"                         # API platform
+cask "ghostty"                         # Modern terminal emulator
 
 # Terminal Tools
 brew "pv"                              # Pipe viewer
 brew "rename"                          # Perl-powered file rename script
 brew "rlwrap"                          # Readline wrapper
 brew "tree"                            # Display directories as trees
+brew "screen"                          # Terminal multiplexer
 brew "vbindiff"                        # Visual binary diff
 brew "tmate"                           # Instant terminal sharing
 brew "asciinema"                       # Record and share terminal sessions
 brew "dasel"                           # Query and update data structures from the command line
 brew "tldr"                            # Simplified and community-driven man pages
+brew "starship"                        # Cross-shell prompt
+brew "gh"                              # GitHub CLI
 
 # HTTP and Web Servers
 brew "caddy"                           # Fast, multi-platform web server with automatic HTTPS
@@ -149,10 +166,10 @@ brew "goreleaser"                      # Deliver Go binaries as fast and easily 
 
 # Specific Toolsets
 brew "whalebrew"                       # Dockerized CLI applications
-
+brew "gd"                              # Graphics library
+brew "ghostscript"                     # PostScript interpreter
+brew "rclone"                          # Manage cloud storage
+brew "graphviz"                        # Graph visualization software
+#
 # Obsidian
 cask "obsidian"                        # Obsidian note-taking app
-
-# My tools
-brew "trippl-timely"                   # Not clear, could be a custom tool
-brew "xlsx-mxlookup"                   # Not clear, could be a custom tool

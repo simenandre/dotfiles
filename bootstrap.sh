@@ -5,25 +5,27 @@ if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Install GNU Stow
-brew install stow
-
 # Install packages from Brewfile
 cd apps && brew bundle
 
 # Create symlinks using stow
 cd ..
-stow zsh
-stow git
-stow apps
-stow config
-stow tmux
-stow nvim
+stow_folders=(zsh git starship tmux nvim)
+for folder in "${stow_folders[@]}"; do
+  echo "stow $folder"
+  stow -t $HOME -D $folder
+  stow -t $HOME $folder
+done
 
 # Install TPM for tmux
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+# Configure macOS defaults with countdown
+echo "Setting MacOS defaults in 10 seconds. Press CTRL+C to abort..."
+sleep 10
+echo ""
 
 # Configure macOS defaults
 sh macos/macos
