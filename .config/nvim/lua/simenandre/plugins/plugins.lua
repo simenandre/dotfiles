@@ -347,6 +347,16 @@ return {
       local servers = {
         -- clangd = {},
         gopls = {},
+        zls = {
+          root_dir = require("lspconfig.util").root_pattern(".git", "build.zig", "zls.json"),
+          settings = {
+            zls = {
+              enable_inlay_hints = true,
+              enable_snippets = true,
+              warn_style = true,
+            },
+          },
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs

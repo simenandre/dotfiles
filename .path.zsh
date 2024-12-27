@@ -9,4 +9,5 @@ add_to_path() {
 
 # Add ghq to PATH
 add_to_path "$GOPATH/bin"
+add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
 
