@@ -20,5 +20,5 @@ path=(
   /usr/local/{,s}bin(N)
   $path
 )
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 . "$HOME/.cargo/env"

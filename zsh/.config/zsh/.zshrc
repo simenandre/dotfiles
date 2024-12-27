@@ -2,7 +2,6 @@
 #      ^----- get shellcheck hints based on bash
 # https://github.com/koalaman/shellcheck/issues/809
 # shellcheck disable=SC1090 # sourced filenames with variables
-echo "Loading ~/.zshrc"
 
 # Download Znap, if it's not there yet.
 [[ -r ~/.zsh_repos/znap/znap.zsh ]] ||
