@@ -8,9 +8,15 @@ fi
 # Install packages from Brewfile
 cd apps && brew bundle
 
+# Install Cargos
+cargo install \
+  git-trim \
+  starship \
+  twm
+
 # Create symlinks using stow
 cd ..
-stow_folders=(zsh git starship tmux nvim)
+stow_folders=(zsh git starship tmux nvim ghostty)
 for folder in "${stow_folders[@]}"; do
   echo "stow $folder"
   stow -t $HOME -D $folder

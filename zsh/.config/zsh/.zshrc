@@ -22,3 +22,5 @@ for file in ~/.config/zsh/{aliases,path,extras}; do
         source "$file"
     fi
 done
+
+eval "$(twm --print-zsh-completion)"
