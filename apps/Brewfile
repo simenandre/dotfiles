@@ -49,6 +49,7 @@ brew "zopfli"                          # Compression tool
 
 # Programming Languages and Runtimes
 brew "golang"                          # Go programming language
+brew "golangci-lint"                   # Go linter
 brew "python@3.11"                     # Python 3.11
 brew "rust"                            # Rust programming language
 brew "zig"                             # Zig programming language
