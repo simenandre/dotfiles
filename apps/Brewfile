@@ -10,6 +10,35 @@ tap "libsql/sqld"
 tap "yakitrak/yakitrak"                # Tap for yakitrak tools
 tap "simenandre/tools"                 # Tap for Simen Andre's tools
 
+# Applications
+cask "spotify"                         # Spotify music streaming
+brew "neovim"                          # Hyperextensible Vim-based text editor
+cask "slack"                           # Slack messaging app
+cask "sonos"                           # Sonos controller app
+brew "tmux"                            # Terminal multiplexer
+cask "figma"                           # Figma design tool
+cask "discord"                         # Discord chat and voice app
+cask "grammarly"                       # Grammarly writing assistant
+cask "microsoft-remote-desktop"        # Microsoft Remote Desktop app
+cask "postico"                         # PostgreSQL GUI client
+cask "cyberduck"                       # FTP and cloud storage browser
+cask "adobe-creative-cloud"            # Adobe Creative Cloud
+# TODO: Figure out how to handle 1password when it updates itself
+# cask "1password"                       # 1Password password manager
+cask "1password-cli"                   # 1Password command-line tool
+cask "protonvpn"                       # ProtonVPN client
+cask "openvpn-connect"                 # OpenVPN client
+cask "raycast"                         # Command launcher
+cask "rectangle"                       # Window management app
+cask "google-chrome"                   # Google Chrome browser
+cask "google-drive"                    # Google Drive
+cask "google-drive-file-stream"        # Google Drive for desktop
+cask "karabiner-elements"              # Keyboard customizer
+cask "postman"                         # API platform
+cask "ghostty"                         # Modern terminal emulator
+cask "proton-mail"                     # ProtonMail client
+cask "claude"
+
 # Mas
 brew "mas"                             # Mac App Store command-line interface
 mas "Outline", id: 1356178125          # Outline VPN
@@ -119,34 +148,6 @@ brew "sqld"                            # SQL daemon
 # Video Meeting Applications
 cask "microsoft-teams"                 # Microsoft Teams
 cask "zoom"                            # Zoom video conferencing
-
-# Applications
-cask "spotify"                         # Spotify music streaming
-brew "neovim"                          # Hyperextensible Vim-based text editor
-cask "slack"                           # Slack messaging app
-cask "sonos"                           # Sonos controller app
-brew "tmux"                            # Terminal multiplexer
-cask "figma"                           # Figma design tool
-cask "discord"                         # Discord chat and voice app
-cask "grammarly"                       # Grammarly writing assistant
-cask "microsoft-remote-desktop"        # Microsoft Remote Desktop app
-cask "postico"                         # PostgreSQL GUI client
-cask "cyberduck"                       # FTP and cloud storage browser
-cask "adobe-creative-cloud"            # Adobe Creative Cloud
-# TODO: Figure out how to handle 1password when it updates itself
-# cask "1password"                       # 1Password password manager
-cask "1password-cli"                   # 1Password command-line tool
-cask "protonvpn"                       # ProtonVPN client
-cask "openvpn-connect"                 # OpenVPN client
-cask "raycast"                         # Command launcher
-cask "rectangle"                       # Window management app
-cask "google-chrome"                   # Google Chrome browser
-cask "google-drive"                    # Google Drive
-cask "google-drive-file-stream"        # Google Drive for desktop
-cask "karabiner-elements"              # Keyboard customizer
-cask "postman"                         # API platform
-cask "ghostty"                         # Modern terminal emulator
-cask "proton-mail"                     # ProtonMail client
 
 # Terminal Tools
 brew "pv"                              # Pipe viewer

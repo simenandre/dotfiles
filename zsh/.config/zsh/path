@@ -11,4 +11,5 @@ add_to_path() {
 add_to_path "$HOME/.volta/bin"
 add_to_path "$GOPATH/bin"
 add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
+add_to_path "/opt/homebrew/opt/libpq/bin"
 
