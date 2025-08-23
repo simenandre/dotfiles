@@ -25,4 +25,13 @@ function getBjerkIssues() {
     --jq 'map({url, createdAt, title, labels: [.labels[].name], assignees: [.assignees[].login], body, number: "#\(.number)", comments: .comments | map({ body: .body, createdAt: .createdAt })})'
 }
 
+function g() {
+  # export GEMINI_API_KEY="$(op read op://Employee/Google_Gemini_API/api_key)"
+  export GOOGLE_CLOUD_PROJECT="sokkel-sandbox"
+  export GOOGLE_CLOUD_LOCATION="europe-north1"
+  export GOOGLE_GENAI_USE_VERTEXAI=true
+
+  gemini
+}
+
 

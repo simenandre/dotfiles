@@ -3,7 +3,6 @@
 # https://github.com/koalaman/shellcheck/issues/809
 # shellcheck disable=SC1090 # sourced filenames with variables
 
-
 # Download Znap, if it's not there yet.
 [[ -r ~/.zsh_repos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
@@ -15,6 +14,7 @@ znap prompt
 
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
+znap source jeffreytse/zsh-vi-mode
 
 for file in ~/.config/zsh/{aliases,path,extras}; do
     if [[ -r "$file" ]] && [[ -f "$file" ]]; then
@@ -24,3 +24,5 @@ for file in ~/.config/zsh/{aliases,path,extras}; do
 done
 
 eval "$(twm --print-zsh-completion)"
+
+bindkey '^I^I' autosuggest-accept

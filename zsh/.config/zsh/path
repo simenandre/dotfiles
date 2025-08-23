@@ -7,9 +7,12 @@ add_to_path() {
   fi
 }
 
+GOPATH="$HOME/go"
+
 # Add ghq to PATH
 add_to_path "$HOME/.volta/bin"
 add_to_path "$GOPATH/bin"
 add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
 add_to_path "/opt/homebrew/opt/libpq/bin"
+add_to_path "$HOME/ghq/github.com/simenandre/dotfiles/scripts"
 
