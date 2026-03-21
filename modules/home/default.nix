@@ -21,17 +21,13 @@
     stateVersion = "24.11";
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
+    claude-code
     nodejs_22
   ];
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
-
-  # Install Claude Code via npm
-  home.activation.installClaudeCode =
-    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      export PATH="${pkgs.nodejs_22}/bin:$PATH"
-      npm install -g @anthropic-ai/claude-code 2>/dev/null || true
-    '';
 }
