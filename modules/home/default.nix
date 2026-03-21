@@ -30,10 +30,12 @@
     git-get
     htop
     jq
+    kubectl
     lazygit
     nodejs_22
     ripgrep
     starship
+    talosctl
     tmux
     tree
     twm
