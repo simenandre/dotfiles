@@ -11,7 +11,7 @@
 
   home = {
     username = "simenandre";
-    homeDirectory = "/Users/simenandre";
+    homeDirectory = if pkgs.stdenv.isDarwin then "/Users/simenandre" else "/home/simenandre";
     # Do not change this after the first installation
     stateVersion = "24.11";
   };
