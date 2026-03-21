@@ -21,8 +21,6 @@
     stateVersion = "24.11";
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     claude-code
     git-get

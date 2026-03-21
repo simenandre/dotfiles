@@ -71,7 +71,7 @@ in
       # https://github.com/koalaman/shellcheck/issues/809
       # shellcheck disable=SC1090 # sourced filenames with variables
 
-      ZNAP_REPOS=~/.zsh_repos
+      zstyle ':znap:*' repos-dir ~/.zsh_repos
       source ~/.zsh_repos/znap/znap.zsh  # Start Znap
 
       znap eval starship 'starship init zsh --print-full-init'
