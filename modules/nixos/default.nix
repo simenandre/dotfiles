@@ -39,6 +39,7 @@
     git
     wget
     neovim
+    ghostty.terminfo
   ];
 
   # 1Password (for SSH signing)
