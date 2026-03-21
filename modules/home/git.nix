@@ -48,7 +48,9 @@
         else "/opt/1Password/op-ssh-sign";
       github.user = "simenandre";
       pull.rebase = true;
+    } // (if pkgs.stdenv.isDarwin then {
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
+    } else {}) // {
       commit.gpgsign = true;
     };
   };
