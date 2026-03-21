@@ -1,5 +1,5 @@
 {
-  description = "Simen Andre's macOS configuration";
+  description = "Simen Andre's dotfiles configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -34,6 +34,16 @@
             home-manager.users.simenandre = import ./modules/home;
           }
         ];
+      };
+
+      homeConfigurations."simenandre" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [ ./modules/home ];
+      };
+
+      homeConfigurations."simenandre@aarch64-linux" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        modules = [ ./modules/home ];
       };
     };
 }

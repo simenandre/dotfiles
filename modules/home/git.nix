@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.git = {
@@ -40,7 +40,10 @@
       merge.log = true;
       push.autoSetupRemote = true;
       gpg.format = "ssh";
-      "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      "gpg \"ssh\"".program =
+        if pkgs.stdenv.isDarwin
+        then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+        else "/opt/1Password/op-ssh-sign";
       github.user = "simenandre";
       pull.rebase = true;
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
