@@ -4,9 +4,11 @@
   programs.git = {
     enable = true;
 
-    signing = {
+    signing = if pkgs.stdenv.isDarwin then {
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCyUn5BfmAnd/6xi0X1mYF/+jPOmCS0bpNUePF55gCY";
       signByDefault = true;
+    } else {
+      signByDefault = false;
     };
 
     settings = {
@@ -41,17 +43,13 @@
       help.autocorrect = 1;
       merge.log = true;
       push.autoSetupRemote = true;
-      gpg.format = "ssh";
-      "gpg \"ssh\"".program =
-        if pkgs.stdenv.isDarwin
-        then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-        else "/opt/1Password/op-ssh-sign";
       github.user = "simenandre";
       pull.rebase = true;
     } // (if pkgs.stdenv.isDarwin then {
+      gpg.format = "ssh";
+      "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
-    } else {}) // {
       commit.gpgsign = true;
-    };
+    } else {});
   };
 }

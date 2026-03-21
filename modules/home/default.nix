@@ -25,6 +25,7 @@
     claude-code
     git-get
     nodejs_22
+    tmux
     twm
   ];
 
