@@ -61,7 +61,7 @@
           fi
       done
 
-      eval "$(twm --print-zsh-completion)"
+      command -v twm &>/dev/null && eval "$(twm --print-zsh-completion)"
 
       bindkey '^I^I' autosuggest-accept
     '';
@@ -75,13 +75,17 @@
       alias git-clean-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v 'master\|main' | xargs git branch -D"
       alias :q='exit'
       alias ls='ls --color'
+    '' + (if pkgs.stdenv.isDarwin then ''
       alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+    '' else "") + ''
 
       # Generic / Random / Utility
       alias rg="rg --hidden --glob '!.git' --glob '!node_modules'"
       alias r='cd $REPOS/github.com/'
       alias c='clear'
+    '' + (if pkgs.stdenv.isDarwin then ''
       alias afk='pmset displaysleepnow'
+    '' else "") + ''
       alias dl="cd ~/Downloads"
       alias l='ls -l'
       alias todo='nt'
@@ -91,7 +95,7 @@
       alias tre="tree -I '.git|node_modules'"
       alias timeliste="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
       alias t="open 'https://tripletex.no/execute/updateHourlist?contextId=11208568'"
-      alias fork-cleaner="fork-cleaner --token $(cat ~/.secrets/github-token)"
+      alias fork-cleaner="fork-cleaner --token \$(cat ~/.secrets/github-token 2>/dev/null)"
       alias vi="nvim"
       alias vim="nvim"
       alias v="nvim"
