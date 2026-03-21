@@ -23,10 +23,21 @@
 
   home.packages = with pkgs; [
     claude-code
+    delta
+    fzf
+    gh
+    ghq
     git-get
+    htop
+    jq
+    lazygit
     nodejs_22
+    ripgrep
+    starship
     tmux
+    tree
     twm
+    yq
   ];
 
   # Let home-manager manage itself

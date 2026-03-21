@@ -77,9 +77,9 @@ in
       znap eval starship 'starship init zsh --print-full-init'
       znap prompt
 
-      znap source marlonrichert/zsh-autocomplete
-      znap source zsh-users/zsh-autosuggestions
-      znap source jeffreytse/zsh-vi-mode
+      source ~/.zsh_repos/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+      source ~/.zsh_repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+      source ~/.zsh_repos/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
       for file in ~/.config/zsh/{aliases,path,extras}; do
           if [[ -r "$file" ]] && [[ -f "$file" ]]; then
