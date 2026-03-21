@@ -55,6 +55,7 @@
       nixosConfigurations."nixbox" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hosts/nixbox/hardware-configuration.nix
           ./modules/nixos
           home-manager.nixosModules.home-manager
           {
