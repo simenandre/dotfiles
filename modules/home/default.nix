@@ -25,6 +25,7 @@
 
   home.packages = with pkgs; [
     claude-code
+    git-get
     nodejs_22
   ];
 
