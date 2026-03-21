@@ -4,6 +4,7 @@
   home.file.".config/twm/twm.yaml".text = ''
     search_paths:
       - ${config.home.homeDirectory}/ghq
+      - ${config.home.homeDirectory}/repositories
       - ~/.config/nvim/
 
     exclude_path_components:
