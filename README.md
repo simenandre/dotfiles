@@ -15,7 +15,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```shell
 git clone git@github.com:simenandre/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-git submodule update --init --recursive
+git submodule update --init
 ```
 
 ### 3. Apply the configuration
@@ -54,7 +54,7 @@ modules/
   darwin/
     default.nix         # System-level configuration (nix settings, core packages)
     homebrew.nix        # Homebrew packages (taps, brews, casks, Mac App Store)
-    macos.nix           # macOS system defaults (replaces macos/macos script)
+    macos.nix           # macOS system defaults
   home/
     default.nix         # home-manager entry point (platform-aware home directory)
     git.nix             # Git configuration (platform-aware SSH signing path)
@@ -62,8 +62,4 @@ modules/
     starship.nix        # Starship prompt configuration
     tmux.nix            # Tmux configuration
     ghostty.nix         # Ghostty terminal configuration
-apps/
-  Brewfile              # Legacy Brewfile (superseded by modules/darwin/homebrew.nix)
-macos/
-  macos                 # Legacy macOS defaults script (superseded by modules/darwin/macos.nix)
 ```
