@@ -29,9 +29,10 @@
       config-nvim,
     }:
     let
-      homeModules = [
+      mkHomeModules = username: [
         ./modules/home
         {
+          home.username = username;
           home.file.".config/nvim".source = config-nvim;
         }
       ];
@@ -45,7 +46,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.simenandre = { imports = homeModules; };
+            home-manager.backupFileExtension = "bak";
+            home-manager.users.cobraz = { imports = mkHomeModules "cobraz"; };
           }
         ];
       };
@@ -58,19 +60,20 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.simenandre = { imports = homeModules; };
+            home-manager.backupFileExtension = "bak";
+            home-manager.users.simenandre = { imports = mkHomeModules "simenandre"; };
           }
         ];
       };
 
       homeConfigurations."simenandre" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = homeModules;
+        modules = mkHomeModules "simenandre";
       };
 
       homeConfigurations."simenandre@aarch64-linux" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
-        modules = homeModules;
+        modules = mkHomeModules "simenandre";
       };
     };
 }

@@ -3,15 +3,17 @@
 {
   programs.git = {
     enable = true;
-    userName = "Simen A. W. Olsen";
-    userEmail = "hello@simenandre.no";
 
     signing = {
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMCyUn5BfmAnd/6xi0X1mYF/+jPOmCS0bpNUePF55gCY";
       signByDefault = true;
     };
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Simen A. W. Olsen";
+        email = "hello@simenandre.no";
+      };
       apply.whitespace = "fix";
       core = {
         trustctime = false;

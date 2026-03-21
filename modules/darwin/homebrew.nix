@@ -11,13 +11,10 @@
     };
 
     taps = [
-      "bramstein/webfonttools"
-      "danielgtaylor/restish"
       "oven-sh/bun"
       "pulumi/tap"
       "go-task/tap"
       "tursodatabase/tap"
-      "yakitrak/yakitrak"
       "simenandre/tools"
     ];
 
@@ -42,11 +39,7 @@
       "openssh"
       "nmap"
       "wget"
-
-      # Security and encryption
-      "gnupg"
-      "git-secret"
-      "ssh-copy-id"
+      "cloudflared"
 
       # Compression libraries and tools
       "lz4"
@@ -55,60 +48,58 @@
       "libffi"
       "p7zip"
       "pigz"
-      "zopfli"
 
       # Programming languages and runtimes
       "golang"
       "golangci-lint"
-      "python@3.11"
       "rust"
       "zig"
-      "pkl"
-
-      # Font tools
-      "sfnt2woff"
-      "sfnt2woff-zopfli"
-      "woff2"
+      "typst"
 
       # JavaScript runtimes and package managers
       "bun"
       "pnpm"
       "volta"
-      "corepack"
       "deno"
-
-      # REST API clients
-      "danielgtaylor/restish/restish"
 
       # Version control
       "git"
       "git-lfs"
+      "git-delta"
       "lazygit"
-      "microplane"
 
       # Search tools
       "ripgrep"
-      "ack"
       "fzf"
 
       # JSON/YAML processing tools
       "jq"
       "yq"
 
+      # Protobuf and gRPC
+      "protobuf"
+      "protoc-gen-go"
+      "protoc-gen-go-grpc"
+
       # Cloud and IaC tools
       "pulumi"
-      "crd2pulumi"
-      "kube2pulumi"
       "pulumictl"
-      "tf2pulumi"
       "azure-cli"
       "kubectl"
       "helm"
       "cilium-cli"
       "doctl"
       "flyctl"
+      "talosctl"
+      "tektoncd-cli"
+      "runpodctl"
 
       # Container tools
+      "docker"
+      "docker-buildx"
+      "docker-compose"
+      "docker-completion"
+      "colima"
       "podman"
       "podman-compose"
 
@@ -119,74 +110,74 @@
       # Databases and database tools
       "turso"
       "libpq"
-      "sqld"
 
       # Terminal tools
       "pv"
       "rename"
-      "rlwrap"
       "tree"
-      "screen"
-      "vbindiff"
-      "tmate"
-      "asciinema"
-      "dasel"
       "tldr"
       "starship"
       "gh"
-      "claude-code"
+      "htop"
+      "opencode"
 
       # HTTP and web servers
       "caddy"
       "goreleaser"
 
-      # Specific toolsets
-      "whalebrew"
-      "gd"
+      # Document and media tools
+      "pandoc"
+      "ffmpeg"
+      "tesseract"
       "ghostscript"
-      "rclone"
       "graphviz"
+
+      # Python tools
+      "pipx"
+
+      # Specific toolsets
+      "rclone"
 
       # Mac App Store CLI
       "mas"
     ];
 
     casks = [
-      "spotify"
+      "1password"
+      "1password-cli"
+      "arc"
+      "basictex"
+      "claude"
+      "discord"
+      "elgato-camera-hub"
+      "figma"
+      "font-jetbrains-mono"
+      "font-symbols-only-nerd-font"
+      "gcloud-cli"
+      "ghostty"
+      "google-chrome"
+      "google-chrome@canary"
+      "google-drive"
+      "libreoffice"
+      "loom"
+      "microsoft-teams"
+      "obsidian"
+      "postico"
+      "proton-mail"
+      "protonvpn"
+      "raycast"
+      "signal"
       "slack"
       "sonos"
-      "figma"
-      "discord"
-      "grammarly"
-      "microsoft-remote-desktop"
-      "postico"
-      "cyberduck"
-      "adobe-creative-cloud"
-      "1password-cli"
-      "protonvpn"
-      "openvpn-connect"
-      "raycast"
-      "rectangle"
-      "google-chrome"
-      "google-drive"
-      "karabiner-elements"
-      "postman"
-      "ghostty"
-      "proton-mail"
-      "claude"
-      "font-symbols-only-nerd-font"
-      "font-jetbrains-mono"
-      "google-cloud-sdk"
-      "docker"
-      "podman-desktop"
-      "microsoft-teams"
+      "spotify"
+      "visual-studio-code"
       "zoom"
-      "obsidian"
     ];
 
     masApps = {
-      "Outline" = 1356178125;
-      "Remote Desktop" = 409907375;
+      "Tailscale" = 1475387142;
+      "Jojo" = 1659864300;
+      "reMarkable" = 1276493162;
     };
   };
 }
