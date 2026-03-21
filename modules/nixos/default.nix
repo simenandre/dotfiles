@@ -36,6 +36,7 @@
   # Core system packages
   environment.systemPackages = with pkgs; [
     curl
+    gcc
     git
     wget
     neovim
