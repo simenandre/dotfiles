@@ -1,5 +1,7 @@
 { ... }:
 
 {
-  home.file.".config/starship.toml".source = ../../starship/.config/starship.toml;
+  programs.starship = {
+    enable = true;
+  };
 }

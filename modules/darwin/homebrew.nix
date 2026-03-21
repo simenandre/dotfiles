@@ -134,6 +134,7 @@
       "tldr"
       "starship"
       "gh"
+      "claude-code"
 
       # HTTP and web servers
       "caddy"

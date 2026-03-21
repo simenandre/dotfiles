@@ -13,6 +13,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    config-nvim = {
+      url = "github:simenandre/config.nvim";
+      flake = false;
+    };
   };
 
   outputs =
@@ -21,7 +26,16 @@
       nixpkgs,
       nix-darwin,
       home-manager,
+      config-nvim,
     }:
+    let
+      homeModules = [
+        ./modules/home
+        {
+          home.file.".config/nvim".source = config-nvim;
+        }
+      ];
+    in
     {
       darwinConfigurations."default" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -31,7 +45,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.simenandre = import ./modules/home;
+            home-manager.users.simenandre = { imports = homeModules; };
           }
         ];
       };
@@ -44,19 +58,19 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.simenandre = import ./modules/home;
+            home-manager.users.simenandre = { imports = homeModules; };
           }
         ];
       };
 
       homeConfigurations."simenandre" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [ ./modules/home ];
+        modules = homeModules;
       };
 
       homeConfigurations."simenandre@aarch64-linux" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
-        modules = [ ./modules/home ];
+        modules = homeModules;
       };
     };
 }

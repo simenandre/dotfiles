@@ -1,6 +1,6 @@
 # dotfiles
 
-My Development Setup, managed with [Nix](https://nixos.org), [nix-darwin](https://github.com/LnL7/nix-darwin), and [home-manager](https://github.com/nix-community/home-manager). Works on macOS and Linux.
+My Development Setup, managed with [Nix](https://nixos.org), [nix-darwin](https://github.com/LnL7/nix-darwin), and [home-manager](https://github.com/nix-community/home-manager). Works on macOS, NixOS, and standalone Linux.
 
 ## Quickstart
 
@@ -15,7 +15,6 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```shell
 git clone git@github.com:simenandre/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-git submodule update --init --recursive
 ```
 
 ### 3. Apply the configuration
@@ -34,36 +33,43 @@ On subsequent runs:
 darwin-rebuild switch --flake .#default
 ```
 
-#### Linux
+#### NixOS
 
-Install [home-manager](https://github.com/nix-community/home-manager) as a standalone tool and apply the configuration:
+Generate hardware config and rebuild:
 
 ```shell
-# x86_64 (most common)
+sudo nixos-generate-config --show-hardware-config > modules/nixos/hardware-configuration.nix
+sudo nixos-rebuild switch --flake .#nixbox
+```
+
+#### Linux (standalone home-manager)
+
+```shell
+# x86_64
 home-manager switch --flake .#simenandre
 
-# aarch64 (ARM64, e.g. Raspberry Pi or ARM cloud instances)
+# aarch64
 home-manager switch --flake .#simenandre@aarch64-linux
 ```
 
 ## Structure
 
 ```
-flake.nix               # Entry point – nix-darwin (macOS) + home-manager (macOS & Linux)
+flake.nix               # Entry point – inputs & all configurations
 modules/
   darwin/
     default.nix         # System-level configuration (nix settings, core packages)
-    homebrew.nix        # Homebrew packages (taps, brews, casks, Mac App Store)
-    macos.nix           # macOS system defaults (replaces macos/macos script)
+    homebrew.nix         # Homebrew packages (taps, brews, casks, Mac App Store)
+    macos.nix            # macOS system defaults
   home/
-    default.nix         # home-manager entry point (platform-aware home directory)
-    git.nix             # Git configuration (platform-aware SSH signing path)
-    zsh.nix             # Zsh configuration files
-    starship.nix        # Starship prompt configuration
-    tmux.nix            # Tmux configuration
-    ghostty.nix         # Ghostty terminal configuration
-apps/
-  Brewfile              # Legacy Brewfile (superseded by modules/darwin/homebrew.nix)
-macos/
-  macos                 # Legacy macOS defaults script (superseded by modules/darwin/macos.nix)
+    default.nix          # home-manager entry point (platform-aware home directory)
+    git.nix              # Git configuration (platform-aware SSH signing path)
+    zsh.nix              # Zsh configuration (zshenv, zshrc, aliases, path, extras)
+    starship.nix         # Starship prompt
+    tmux.nix             # Tmux configuration
+    ghostty.nix          # Ghostty terminal configuration
+  nixos/
+    default.nix          # NixOS system configuration
+scripts/
+  cleanup.sh             # macOS cleanup utility
 ```

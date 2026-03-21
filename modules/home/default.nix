@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -16,9 +16,17 @@
     stateVersion = "24.11";
   };
 
+  home.packages = with pkgs; [
+    nodejs_22
+  ];
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
-  # Link neovim config (managed as a git submodule)
-  home.file.".config/nvim".source = ../../nvim/.config/nvim;
+  # Install Claude Code via npm on Linux (on macOS it's managed by Homebrew)
+  home.activation.installClaudeCode = lib.mkIf (!pkgs.stdenv.isDarwin)
+    (lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      export PATH="${pkgs.nodejs_22}/bin:$PATH"
+      npm install -g @anthropic-ai/claude-code 2>/dev/null || true
+    '');
 }
