@@ -36,6 +36,19 @@
         ];
       };
 
+      nixosConfigurations."nixbox" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/nixos
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.simenandre = import ./modules/home;
+          }
+        ];
+      };
+
       homeConfigurations."simenandre" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [ ./modules/home ];
