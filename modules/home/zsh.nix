@@ -7,10 +7,31 @@ let
     rev = "main";
     hash = "sha256-wNxNraqlY3Uy4RTUl/2IwJqfUDz/mqILq5QPNrWZxi8=";
   };
+  zsh-autocomplete = pkgs.fetchFromGitHub {
+    owner = "marlonrichert";
+    repo = "zsh-autocomplete";
+    rev = "main";
+    hash = "sha256-KYey9sidz8VzgfM9YVaCsVXpKKdCjSHk3tuadQz9Re0=";
+  };
+  zsh-autosuggestions = pkgs.fetchFromGitHub {
+    owner = "zsh-users";
+    repo = "zsh-autosuggestions";
+    rev = "master";
+    hash = "sha256-KmkXgK1J6iAyb1FtF/gOa0adUnh1pgFsgQOUnNngBaE=";
+  };
+  zsh-vi-mode = pkgs.fetchFromGitHub {
+    owner = "jeffreytse";
+    repo = "zsh-vi-mode";
+    rev = "master";
+    hash = "sha256-WdZHCVxVVOs4HyG5f56vAA17UWYOvb9Yf6v7M1RIdU4=";
+  };
 in
 {
   home.file = {
     ".zsh_repos/znap".source = znap;
+    ".zsh_repos/marlonrichert/zsh-autocomplete".source = zsh-autocomplete;
+    ".zsh_repos/zsh-users/zsh-autosuggestions".source = zsh-autosuggestions;
+    ".zsh_repos/jeffreytse/zsh-vi-mode".source = zsh-vi-mode;
     ".zshenv".text = ''
       ##!/bin/zsh
       #
@@ -50,6 +71,7 @@ in
       # https://github.com/koalaman/shellcheck/issues/809
       # shellcheck disable=SC1090 # sourced filenames with variables
 
+      ZNAP_REPOS=~/.zsh_repos
       source ~/.zsh_repos/znap/znap.zsh  # Start Znap
 
       znap eval starship 'starship init zsh --print-full-init'
