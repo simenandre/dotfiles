@@ -16,6 +16,7 @@
       "go-task/tap"
       "tursodatabase/tap"
       "simenandre/tools"
+      "dinacomputer/tap"
     ];
 
     brews = [
@@ -93,6 +94,7 @@
       "talosctl"
       "tektoncd-cli"
       "runpodctl"
+      "dina"
 
       # Container tools
       "docker"
@@ -110,6 +112,7 @@
       # Databases and database tools
       "turso"
       "libpq"
+      "sqlc"
 
       # Terminal tools
       "pv"
