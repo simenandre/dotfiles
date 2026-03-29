@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 let
-  znap = pkgs.fetchFromGitHub {
-    owner = "marlonrichert";
-    repo = "zsh-snap";
-    rev = "main";
-    hash = "sha256-wNxNraqlY3Uy4RTUl/2IwJqfUDz/mqILq5QPNrWZxi8=";
-  };
   zsh-autocomplete = pkgs.fetchFromGitHub {
     owner = "marlonrichert";
     repo = "zsh-autocomplete";
@@ -28,7 +22,6 @@ let
 in
 {
   home.file = {
-    ".zsh_repos/znap".source = znap;
     ".zsh_repos/marlonrichert/zsh-autocomplete".source = zsh-autocomplete;
     ".zsh_repos/zsh-users/zsh-autosuggestions".source = zsh-autosuggestions;
     ".zsh_repos/jeffreytse/zsh-vi-mode".source = zsh-vi-mode;
@@ -71,11 +64,7 @@ in
       # https://github.com/koalaman/shellcheck/issues/809
       # shellcheck disable=SC1090 # sourced filenames with variables
 
-      zstyle ':znap:*' repos-dir ~/.zsh_repos
-      source ~/.zsh_repos/znap/znap.zsh  # Start Znap
-
-      znap eval starship 'starship init zsh --print-full-init'
-      znap prompt
+      eval "$(starship init zsh)"
 
       source ~/.zsh_repos/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
       source ~/.zsh_repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -140,10 +129,7 @@ in
         fi
       }
 
-      GOPATH="$HOME/go"
-
       add_to_path "$HOME/.volta/bin"
-      add_to_path "$GOPATH/bin"
       add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
       add_to_path "/opt/homebrew/opt/libpq/bin"
     '';

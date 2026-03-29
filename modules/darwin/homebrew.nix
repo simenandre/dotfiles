@@ -17,6 +17,8 @@
       "tursodatabase/tap"
       "simenandre/tools"
       "dinacomputer/tap"
+      "anomalyco/tap"
+      "siderolabs/tap"
     ];
 
     brews = [
@@ -51,7 +53,6 @@
       "pigz"
 
       # Programming languages and runtimes
-      "golang"
       "golangci-lint"
       "rust"
       "zig"
@@ -123,6 +124,7 @@
       "gh"
       "htop"
       "opencode"
+      "pre-commit"
 
       # HTTP and web servers
       "caddy"
@@ -180,7 +182,6 @@
     masApps = {
       "Tailscale" = 1475387142;
       "Jojo" = 1659864300;
-      "reMarkable" = 1276493162;
     };
   };
 }

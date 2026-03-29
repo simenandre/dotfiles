@@ -33,11 +33,6 @@
   };
   programs.zsh.enable = true;
 
-  programs.go.enable = true;
-
-  home.sessionPath = [ "${config.programs.go.env.GOPATH}/bin" ];
-
-
 
   # Core system packages
   environment.systemPackages = with pkgs; [

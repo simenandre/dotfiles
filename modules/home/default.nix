@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./claude.nix
     ./git.nix
     ./ghostty.nix
     ./starship.nix
@@ -41,6 +42,8 @@
     twm
     yq
   ];
+
+  programs.go.enable = true;
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
