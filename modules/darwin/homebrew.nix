@@ -123,8 +123,6 @@
       "starship"
       "gh"
       "htop"
-      "opencode"
-      "pre-commit"
 
       # HTTP and web servers
       "caddy"

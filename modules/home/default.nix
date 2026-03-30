@@ -41,6 +41,8 @@
     tree
     twm
     yq
+    opencode
+    pre-commit
   ];
 
   programs.go.enable = true;
