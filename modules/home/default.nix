@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, dina, ... }:
 
 {
   imports = [
@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     claude-code
+    dina.packages.${pkgs.stdenv.hostPlatform.system}.default
     delta
     fzf
     gh

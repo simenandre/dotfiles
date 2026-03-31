@@ -1,6 +1,23 @@
 { ... }:
 
 {
+  home.file.".claude/CLAUDE.md".text = ''
+    # Code Style
+
+    - ONLY use comments to explain weird code or non-obvious behaviour, never to explain simple code.
+
+    # Git & PRs
+
+    - ALWAYS write short and concise git commit messages and pull request messages.
+    - NEVER include a Co-Authored-By: line in commits.
+    - NEVER include "Generated with [Claude Code]" in PRs.
+
+    # Docker & Runtimes
+
+    - ALWAYS use the latest LTS version for base Docker images, Node.js engine requirements and similar.
+    - ALWAYS strive to use base Docker images with common ancestors in multi-stage builds: a stage based on `debian:trixie-slim` strongly suggests using `node:24-trixie-slim`.
+  '';
+
   home.file.".claude/skills/push/SKILL.md".text = ''
     ---
     name: push
@@ -22,27 +39,22 @@
     Stage the relevant files. Prefer `git add <specific files>` over `git add -A`.
     Never stage files that look like secrets (.env, credentials, tokens).
 
-    ## Step 3: Create Commit
+    ## Step 3: Ask — Branch or Main?
 
-    - Analyze the staged diff and recent `git log --oneline -10` to match the repo's commit style.
-    - Write a concise, meaningful commit message (1-2 sentences) focusing on the "why".
-    - **Do NOT add a Co-Authored-By line. Never include any co-author trailer.**
-    - Create the commit using a HEREDOC for the message.
+    Use the **AskUserQuestion** tool to ask the user how to push. Example:
 
-    ## Step 4: Ask — Branch or Main?
+    - question: "How should this be pushed?"
+    - header: "Push target"
+    - options:
+      - label: "Current branch", description: "Push directly to the current branch"
+      - label: "New branch + PR", description: "Create a new branch and open a pull request"
 
-    Ask the user:
-
-    > Push directly to the current branch, or create a new branch and open a PR?
-
-    Present the two options clearly and wait for a response.
-
-    ### Option A: Push to current branch
+    ### If "Current branch":
 
     - Run `git push` (with `-u` if needed).
     - Done.
 
-    ### Option B: New branch + PR
+    ### If "New branch + PR":
 
     1. Create a descriptive branch name based on the changes (e.g., `feat/add-logging`, `fix/null-check-user`).
     2. Check out the new branch and push with `-u`.
@@ -50,11 +62,22 @@
        - Run `git log --format='%an' -50 | sort | uniq -c | sort -rn | head -10` to find active contributors.
        - Cross-reference with files changed: run `git log --format='%an' -- <changed-files> | sort | uniq -c | sort -rn | head -5` to find who has context on the modified code.
        - Pick the most relevant reviewer (not the current user — check with `git config user.name`).
-       - Present your choice to the user and ask for confirmation before proceeding.
+       - Build a list of up to 4 candidate reviewers and use **AskUserQuestion** to let the user pick. Example:
+         - question: "Who should review this PR?"
+         - header: "Reviewer"
+         - options: one per candidate, with description showing their commit count / relevance to changed files.
     4. Create the PR using `gh pr create`:
        - Short title (under 70 chars).
        - Body with a `## Summary` section (2-3 bullet points) and a `## Test plan` section.
        - Add the confirmed reviewer with `--reviewer`.
     5. Return the PR URL to the user.
+    
+    ## Step 4: Create Commit
+
+    - Analyze the staged diff.
+    - Write a concise commit message using **conventional commit format** (e.g., `feat:`, `fix:`, `refactor:`, `chore:`, `docs:`, `test:`, `ci:`). Include a scope when it adds clarity (e.g., `feat(auth):`, `fix(api):`).
+    - Output ONLY the raw commit message — no markdown, no code blocks, no backticks, no explanations.
+    - **Do NOT add a Co-Authored-By line. Never include any co-author trailer.**
+    - Create the commit using a HEREDOC for the message.
   '';
 }

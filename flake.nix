@@ -18,6 +18,11 @@
       url = "github:simenandre/config.nvim";
       flake = false;
     };
+
+    dina = {
+      url = "github:dinacomputer/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,6 +32,7 @@
       nix-darwin,
       home-manager,
       config-nvim,
+      dina,
     }:
     let
       mkHomeModules = username: [
@@ -47,6 +53,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak";
+            home-manager.extraSpecialArgs = { inherit dina; };
             home-manager.users.cobraz = { imports = mkHomeModules "cobraz"; };
           }
         ];
@@ -62,6 +69,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak";
+            home-manager.extraSpecialArgs = { inherit dina; };
             home-manager.users.simenandre = { imports = mkHomeModules "simenandre"; };
           }
         ];
@@ -69,11 +77,13 @@
 
       homeConfigurations."simenandre" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        extraSpecialArgs = { inherit dina; };
         modules = mkHomeModules "simenandre";
       };
 
       homeConfigurations."simenandre@aarch64-linux" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        extraSpecialArgs = { inherit dina; };
         modules = mkHomeModules "simenandre";
       };
     };

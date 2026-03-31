@@ -16,7 +16,6 @@
       "go-task/tap"
       "tursodatabase/tap"
       "simenandre/tools"
-      "dinacomputer/tap"
       "anomalyco/tap"
       "siderolabs/tap"
     ];
@@ -95,8 +94,6 @@
       "talosctl"
       "tektoncd-cli"
       "runpodctl"
-      "dina"
-
       # Container tools
       "docker"
       "docker-buildx"
