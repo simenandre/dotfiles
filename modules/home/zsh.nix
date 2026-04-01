@@ -135,6 +135,10 @@ in
     '';
 
     ".config/zsh/extras".text = ''
+      if [[ "$(uname)" == "Darwin" ]]; then
+        export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+      fi
+
       NOTES_DIR=$HOME/ghq/github.com/simenandre/notes/
       function note() {
         if [ $1 ]; then
