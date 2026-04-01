@@ -16,6 +16,10 @@
 
     - ALWAYS use the latest LTS version for base Docker images, Node.js engine requirements and similar.
     - ALWAYS strive to use base Docker images with common ancestors in multi-stage builds: a stage based on `debian:trixie-slim` strongly suggests using `node:24-trixie-slim`.
+
+    # Nix
+
+    - If a command is not available and there is a `flake.nix` in the project, use `nix develop` or `nix run` to run commands from the flake's dev shell instead of installing tools manually.
   '';
 
   home.file.".claude/skills/push/SKILL.md".text = ''
