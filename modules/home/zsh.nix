@@ -68,6 +68,13 @@ in
 
       source ~/.zsh_repos/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
       source ~/.zsh_repos/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+      # zsh-vi-mode clobbers all keybindings on init, so anything
+      # that needs to survive (fzf, autosuggest) goes in zvm_after_init.
+      function zvm_after_init() {
+        eval "$(fzf --zsh)"
+        bindkey '^I^I' autosuggest-accept
+      }
+
       source ~/.zsh_repos/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
       for file in ~/.config/zsh/{aliases,path,extras}; do
@@ -78,8 +85,6 @@ in
       done
 
       command -v twm &>/dev/null && eval "$(twm --print-zsh-completion)"
-
-      bindkey '^I^I' autosuggest-accept
     '';
 
     ".config/zsh/aliases".text = ''
