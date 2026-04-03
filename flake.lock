@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774856023,
-        "narHash": "sha256-Y7+3p4Wu5thX2L2ol5rQD1uys76aR7D+5pC5slXVh4k=",
+        "lastModified": 1775217257,
+        "narHash": "sha256-3m79jjgeNoK7JxhPrmNLGWI0vrZ1gtBCe3qWmijplYU=",
         "owner": "dinacomputer",
         "repo": "cli",
-        "rev": "299df0757dc12e1347b40960a1b09834d780755a",
+        "rev": "4ddd97559fa6dfd2e4b3a4ccea634c16a40a0274",
         "type": "github"
       },
       "original": {
