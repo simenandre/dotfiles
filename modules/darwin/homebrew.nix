@@ -13,7 +13,6 @@
     taps = [
       "oven-sh/bun"
       "pulumi/tap"
-      "go-task/tap"
       "tursodatabase/tap"
       "simenandre/tools"
       "anomalyco/tap"
@@ -104,7 +103,6 @@
       "podman-compose"
 
       # Task runners and automation
-      "go-task"
       "act"
 
       # Databases and database tools

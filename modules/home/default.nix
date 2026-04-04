@@ -42,6 +42,7 @@
     tree
     twm
     yq
+    go-task
     opencode
   ];
 
