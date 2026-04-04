@@ -24,7 +24,7 @@
   # User account
   users.users.simenandre = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDDXfT23Ne7Rl/rdiqrLf4vWfQqgUCo26+NcL41PVSag"
@@ -47,6 +47,9 @@
   # 1Password (for SSH signing)
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # SSH
   services.openssh.enable = true;
