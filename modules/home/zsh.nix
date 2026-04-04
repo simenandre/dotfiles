@@ -64,6 +64,9 @@ in
       # https://github.com/koalaman/shellcheck/issues/809
       # shellcheck disable=SC1090 # sourced filenames with variables
 
+      # Remove stale compiled zsh files that shadow nix-managed configs
+      rm -f ~/.config/zsh/.zshrc.zwc ~/.config/zsh/{aliases,path,extras}.zwc
+
       eval "$(starship init zsh)"
 
       source ~/.zsh_repos/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
