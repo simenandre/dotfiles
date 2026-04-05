@@ -53,7 +53,6 @@ in
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '' else ""
     ) + ''
-      [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
     '';
 
     ".hushlogin".text = "";
@@ -137,7 +136,6 @@ in
         fi
       }
 
-      add_to_path "$HOME/.volta/bin"
       add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
       add_to_path "/opt/homebrew/opt/libpq/bin"
     '';

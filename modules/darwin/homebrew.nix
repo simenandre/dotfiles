@@ -52,14 +52,12 @@
 
       # Programming languages and runtimes
       "golangci-lint"
-      "rust"
       "zig"
       "typst"
 
       # JavaScript runtimes and package managers
       "bun"
       "pnpm"
-      "volta"
       "deno"
 
       # Version control
@@ -84,7 +82,6 @@
       # Cloud and IaC tools
       "pulumi"
       "pulumictl"
-      "azure-cli"
       "kubectl"
       "helm"
       "cilium-cli"
@@ -154,9 +151,7 @@
       "gcloud-cli"
       "ghostty"
       "google-chrome"
-      "google-chrome@canary"
       "google-drive"
-      "libreoffice"
       "loom"
       "microsoft-teams"
       "obsidian"
