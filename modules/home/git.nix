@@ -42,6 +42,7 @@
       diff.renames = "copies";
       help.autocorrect = 1;
       merge.log = true;
+      init.defaultBranch = "main";
       push.autoSetupRemote = true;
       github.user = "simenandre";
       pull.rebase = true;
