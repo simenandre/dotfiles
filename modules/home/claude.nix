@@ -23,8 +23,8 @@
 
     # Loggie
 
-    - If the Loggie MCP server is available, use the `annotate` tool to describe what you are working on at the start of a session and when the task changes. Keep annotations short and descriptive (e.g. "Fixing auth bug in login flow", "Adding CSV export endpoint").
-    - When annotating, also set the tmux window title using `tmux rename-window "<title>"`. The title should be very short and recognizable — it does not need to match the annotation exactly.
+    - If the Loggie MCP server is available, use the `/session` skill to annotate what you are working on at the start of a session and when the task changes.
+    - When ending a conversation or the user says goodbye, use `/session end` to clean up.
   '';
 
   home.file.".claude/skills/session/SKILL.md".text = ''
