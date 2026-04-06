@@ -27,6 +27,33 @@
     - When annotating, also set the tmux window title using `tmux rename-window "<title>"`. The title should be very short and recognizable — it does not need to match the annotation exactly.
   '';
 
+  home.file.".claude/skills/session/SKILL.md".text = ''
+    ---
+    name: session
+    description: Start or end a work session — annotates via Loggie and sets the tmux window title.
+    allowed-tools: mcp__loggie__annotate, Bash(tmux rename-window *)
+    ---
+
+    # /session — Work Session Management
+
+    You are executing the /session skill. This skill manages Loggie annotations and tmux window titles.
+
+    ## Arguments
+
+    - `/session <description>` — Start or update the current session with a description of what you're working on.
+    - `/session end` — End the current session.
+
+    ## Starting / Updating a Session
+
+    1. Use the Loggie `annotate` MCP tool with the provided description. Keep it short and descriptive (e.g. "Fixing auth bug in login flow", "Adding CSV export endpoint").
+    2. Set the tmux window title using `tmux rename-window "<title>"`. The title should be very short and recognizable — it does not need to match the annotation exactly.
+
+    ## Ending a Session
+
+    1. Call the Loggie `annotate` MCP tool with an empty string to stop the current annotation.
+    2. Reset the tmux window title using `tmux rename-window "zsh"`.
+  '';
+
   home.file.".claude/skills/push/SKILL.md".text = ''
     ---
     name: push
