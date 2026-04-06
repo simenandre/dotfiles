@@ -16,6 +16,7 @@
 
     set -g set-titles on
     set -g set-titles-string "#S / #W"
+    set -g allow-rename on
 
     set -g base-index 1
     set-window-option -g mode-keys vi
