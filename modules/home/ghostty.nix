@@ -10,5 +10,6 @@
     window-theme = "dark"
     window-inherit-working-directory = true
     window-inherit-font-size = true
+    title = ""
   '';
 }

@@ -172,6 +172,12 @@ in
           --jq 'map({url, createdAt, title, labels: [.labels[].name], assignees: [.assignees[].login], body, number: "#\(.number)", comments: .comments | map({ body: .body, createdAt: .createdAt })})'
       }
 
+      function ssh() {
+        printf '\033]0;ssh %s\033\\' "$*"
+        command ssh "$@"
+        printf '\033]0;%s@%s:%s\033\\' "$USER" "$HOST" "''${PWD/#$HOME/~}"
+      }
+
       function g() {
         export GOOGLE_CLOUD_PROJECT="sokkel-sandbox"
         export GOOGLE_CLOUD_LOCATION="europe-north1"
