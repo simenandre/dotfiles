@@ -20,6 +20,11 @@
     # Nix
 
     - If a command is not available and there is a `flake.nix` in the project, use `nix develop` or `nix run` to run commands from the flake's dev shell instead of installing tools manually.
+
+    # Loggie
+
+    - If the Loggie MCP server is available, use the `annotate` tool to describe what you are working on at the start of a session and when the task changes. Keep annotations short and descriptive (e.g. "Fixing auth bug in login flow", "Adding CSV export endpoint").
+    - When annotating, also set the tmux window title using `tmux rename-window "<title>"`. The title should be very short and recognizable — it does not need to match the annotation exactly.
   '';
 
   home.file.".claude/skills/push/SKILL.md".text = ''

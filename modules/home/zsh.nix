@@ -66,6 +66,12 @@ in
       # Remove stale compiled zsh files that shadow nix-managed configs
       rm -f ~/.config/zsh/.zshrc.zwc ~/.config/zsh/{aliases,path,extras}.zwc
 
+      function set_terminal_title() {
+        printf '\033]0;%s@%s:%s\033\\' "$USER" "''${HOST%%.*}" "''${PWD/#$HOME/~}"
+      }
+      autoload -Uz add-zsh-hook
+      add-zsh-hook precmd set_terminal_title
+
       eval "$(starship init zsh)"
 
       source ~/.zsh_repos/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -123,6 +129,16 @@ in
       alias vim="nvim"
       alias v="nvim"
 
+      function claude() {
+        if [[ -n "$TMUX" ]]; then
+          tmux rename-window "claude"
+          command claude "$@"
+          tmux set-window-option automatic-rename on
+        else
+          command claude "$@"
+        fi
+      }
+
       alias dump-issues="getBjerkIssues > ~/Downloads/issues-$(date -I).json"
     '';
 
@@ -170,12 +186,6 @@ in
           --search "-label:backlog -label:kind/system" \
           --json title,body,url,createdAt,assignees,number,labels,comments \
           --jq 'map({url, createdAt, title, labels: [.labels[].name], assignees: [.assignees[].login], body, number: "#\(.number)", comments: .comments | map({ body: .body, createdAt: .createdAt })})'
-      }
-
-      function ssh() {
-        printf '\033]0;ssh %s\033\\' "$*"
-        command ssh "$@"
-        printf '\033]0;%s@%s:%s\033\\' "$USER" "$HOST" "''${PWD/#$HOME/~}"
       }
 
       function g() {
