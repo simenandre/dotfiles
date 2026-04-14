@@ -154,6 +154,7 @@ in
 
       add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
       add_to_path "/opt/homebrew/opt/libpq/bin"
+      add_to_path "$HOME/go/bin"
     '';
 
     ".config/zsh/extras".text = ''
