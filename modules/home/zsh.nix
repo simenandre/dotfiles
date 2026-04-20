@@ -155,11 +155,13 @@ in
       add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
       add_to_path "/opt/homebrew/opt/libpq/bin"
       add_to_path "$HOME/go/bin"
+      add_to_path "$HOME/.cargo/bin"
     '';
 
     ".config/zsh/extras".text = ''
       if [[ "$(uname)" == "Darwin" ]]; then
         export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+        export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
       fi
 
       NOTES_DIR=$HOME/ghq/github.com/simenandre/notes/

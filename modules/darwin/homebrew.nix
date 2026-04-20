@@ -54,6 +54,7 @@
       "golangci-lint"
       "zig"
       "typst"
+      "rustup"
 
       # JavaScript runtimes and package managers
       "bun"
@@ -170,6 +171,7 @@
     masApps = {
       "Tailscale" = 1475387142;
       "Jojo" = 1659864300;
+      "Adobe Lightroom" = 1451544217;
     };
   };
 }
