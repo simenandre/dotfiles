@@ -44,6 +44,7 @@ in
       path=(
         $HOME/{,s}bin(N)
         $HOME/.local/{,s}bin(N)
+        $HOME/.cargo/bin(N)
         /opt/{homebrew,local}/{,s}bin(N)
         /usr/local/{,s}bin(N)
         $path
@@ -155,7 +156,6 @@ in
       add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
       add_to_path "/opt/homebrew/opt/libpq/bin"
       add_to_path "$HOME/go/bin"
-      add_to_path "$HOME/.cargo/bin"
     '';
 
     ".config/zsh/extras".text = ''
