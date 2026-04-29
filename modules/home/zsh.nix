@@ -228,6 +228,7 @@ in
     generate rustup      rustup   completions zsh
     generate cargo       rustup   completions zsh cargo
     generate robin       robin    completion zsh
+    generate bobbin      bobbin   completion zsh
     generate dina        dina     completion zsh
     generate so          so       completion zsh
     generate dinactl     dinactl  completion zsh
