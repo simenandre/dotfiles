@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   zsh-autocomplete = pkgs.fetchFromGitHub {
@@ -40,11 +40,18 @@ in
       # Ensure path arrays do not contain duplicates.
       typeset -gU path fpath
 
+      # Cached zsh completions generated on rebuild (see home.activation in zsh.nix).
+      fpath=($HOME/.zsh_completions $fpath)
+
       # Set the list of directories that zsh searches for commands.
       path=(
         $HOME/{,s}bin(N)
         $HOME/.local/{,s}bin(N)
         $HOME/.cargo/bin(N)
+        $HOME/go/bin(N)
+        /Library/Frameworks/Firebird.framework/Resources/bin(N)
+        /opt/homebrew/opt/libpq/bin(N)
+        /opt/homebrew/opt/rustup/bin(N)
         /opt/{homebrew,local}/{,s}bin(N)
         /usr/local/{,s}bin(N)
         $path
@@ -65,7 +72,7 @@ in
       # shellcheck disable=SC1090 # sourced filenames with variables
 
       # Remove stale compiled zsh files that shadow nix-managed configs
-      rm -f ~/.config/zsh/.zshrc.zwc ~/.config/zsh/{aliases,path,extras}.zwc
+      rm -f ~/.config/zsh/.zshrc.zwc ~/.config/zsh/{aliases,extras}.zwc
 
       function set_terminal_title() {
         printf '\033]0;%s@%s:%s\033\\' "$USER" "''${HOST%%.*}" "''${PWD/#$HOME/~}"
@@ -86,7 +93,7 @@ in
 
       source ~/.zsh_repos/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-      for file in ~/.config/zsh/{aliases,path,extras}; do
+      for file in ~/.config/zsh/{aliases,extras}; do
           if [[ -r "$file" ]] && [[ -f "$file" ]]; then
               # shellcheck source=/dev/null
               source "$file"
@@ -107,6 +114,9 @@ in
       alias ls='ls --color'
     '' + (if pkgs.stdenv.isDarwin then ''
       alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+      alias rebuild='sudo darwin-rebuild switch --flake ~/ghq/github.com/simenandre/dotfiles#default'
+      alias update='nix flake update --flake ~/ghq/github.com/simenandre/dotfiles && sudo darwin-rebuild switch --flake ~/ghq/github.com/simenandre/dotfiles#default'
+      alias nix-gc='sudo nix-collect-garbage --delete-older-than 14d && nix-collect-garbage --delete-older-than 14d && nix store gc'
     '' else "") + ''
 
       # Generic / Random / Utility
@@ -141,21 +151,6 @@ in
       }
 
       alias dump-issues="getBjerkIssues > ~/Downloads/issues-$(date -I).json"
-    '';
-
-    ".config/zsh/path".text = ''
-      #!/bin/bash
-
-      # Add directories to the PATH and prevent to add the same directory multiple times upon shell reload.
-      add_to_path() {
-        if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
-          export PATH="$1:$PATH"
-        fi
-      }
-
-      add_to_path "/Library/Frameworks/Firebird.framework/Resources/bin"
-      add_to_path "/opt/homebrew/opt/libpq/bin"
-      add_to_path "$HOME/go/bin"
     '';
 
     ".config/zsh/extras".text = ''
@@ -200,4 +195,42 @@ in
       }
     '';
   };
+
+  home.activation.generateZshCompletions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    COMPDIR="$HOME/.zsh_completions"
+    $DRY_RUN_CMD mkdir -p "$COMPDIR"
+
+    # Make brew-installed binaries discoverable during activation.
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
+
+    generate() {
+      local name="$1"
+      local bin="$2"
+      shift 2
+      if command -v "$bin" >/dev/null 2>&1; then
+        if "$bin" "$@" > "$COMPDIR/_$name.tmp" 2>/dev/null && [ -s "$COMPDIR/_$name.tmp" ]; then
+          mv "$COMPDIR/_$name.tmp" "$COMPDIR/_$name"
+        else
+          rm -f "$COMPDIR/_$name.tmp"
+          echo "  warning: failed to generate _$name (does '$bin' support 'completion zsh'?)"
+        fi
+      fi
+    }
+
+    generate gh          gh       completion -s zsh
+    generate kubectl     kubectl  completion zsh
+    generate helm        helm     completion zsh
+    generate pulumi      pulumi   gen-completion zsh
+    generate bun         bun      completions zsh
+    generate pnpm        pnpm     completion zsh
+    generate deno        deno     completions zsh
+    generate flyctl      flyctl   completion zsh
+    generate rustup      rustup   completions zsh
+    generate cargo       rustup   completions zsh cargo
+    generate robin       robin    completion zsh
+    generate dina        dina     completion zsh
+    generate so          so       completion zsh
+    generate dinactl     dinactl  completion zsh
+    generate identityctl identityctl completion zsh
+  '';
 }
