@@ -11,87 +11,21 @@
     };
 
     taps = [
-      "oven-sh/bun"
-      "pulumi/tap"
-      "tursodatabase/tap"
       "simenandre/tools"
       "anomalyco/tap"
-      "siderolabs/tap"
     ];
 
+    # Note: most CLI tools live in nixpkgs (modules/darwin/default.nix).
+    # These stay in brew on purpose: shell completions, the macOS container
+    # stack, system ssh, and the Mac App Store CLI.
     brews = [
-      # Editors and terminal multiplexers
-      "neovim"
-      "tmux"
-
-      # Shells and shell utilities
-      "zsh"
-      "bash"
+      # Shell completions
       "bash-completion"
-      "ghq"
-      "moreutils"
 
-      # GNU tools
-      "findutils"
-      "gnu-sed"
-      "grep"
-
-      # Networking tools
+      # System ssh
       "openssh"
-      "nmap"
-      "wget"
-      "cloudflared"
 
-      # Compression libraries and tools
-      "lz4"
-      "zlib"
-      "zstd"
-      "libffi"
-      "p7zip"
-      "pigz"
-
-      # Programming languages and runtimes
-      "golangci-lint"
-      "zig"
-      "typst"
-      "rustup"
-
-      # JavaScript runtimes and package managers
-      "bun"
-      "pnpm"
-      "deno"
-
-      # Version control
-      "git"
-      "git-lfs"
-      "git-delta"
-      "lazygit"
-
-      # Search tools
-      "ripgrep"
-      "fzf"
-
-      # JSON/YAML processing tools
-      "jq"
-      "yq"
-
-      # Protobuf and gRPC
-      "protobuf"
-      "protoc-gen-go"
-      "protoc-gen-go-grpc"
-
-      # Cloud and IaC tools
-      "pulumi"
-      "pulumictl"
-      "kubectl"
-      "helm"
-      "cilium-cli"
-      "doctl"
-      "flyctl"
-      "talosctl"
-      "tektoncd-cli"
-      "runpodctl"
-      # Container tools
+      # Container tools (kept in brew for reliable macOS runtime)
       "docker"
       "docker-buildx"
       "docker-compose"
@@ -99,40 +33,6 @@
       "colima"
       "podman"
       "podman-compose"
-
-      # Task runners and automation
-      "act"
-
-      # Databases and database tools
-      "turso"
-      "libpq"
-      "sqlc"
-
-      # Terminal tools
-      "pv"
-      "rename"
-      "tree"
-      "tldr"
-      "starship"
-      "gh"
-      "htop"
-
-      # HTTP and web servers
-      "caddy"
-      "goreleaser"
-
-      # Document and media tools
-      "pandoc"
-      "ffmpeg"
-      "tesseract"
-      "ghostscript"
-      "graphviz"
-
-      # Python tools
-      "pipx"
-
-      # Specific toolsets
-      "rclone"
 
       # Mac App Store CLI
       "mas"

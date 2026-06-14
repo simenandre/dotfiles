@@ -50,6 +50,7 @@
       gpg.format = "ssh";
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
+      "url \"ssh://git@codeberg.org/\"".insteadOf = "https://codeberg.org/";
       commit.gpgsign = true;
     } else {});
   };
