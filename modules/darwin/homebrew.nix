@@ -22,14 +22,18 @@
       # Shell completions
       "bash-completion"
 
+      # Git history rewriting (filter-branch/BFG replacement)
+      "git-filter-repo"
+
       # System ssh
       "openssh"
 
       # Container tools (kept in brew for reliable macOS runtime)
+      # The docker formula ships its own completions; the separate
+      # docker-completion formula collides with it and blocks `brew link`.
       "docker"
       "docker-buildx"
       "docker-compose"
-      "docker-completion"
       "colima"
       "podman"
       "podman-compose"
@@ -70,6 +74,7 @@
 
     masApps = {
       "Tailscale" = 1475387142;
+      "Xcode" = 497799835;
       "Jojo" = 1659864300;
       "Adobe Lightroom" = 1451544217;
     };

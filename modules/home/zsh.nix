@@ -114,8 +114,8 @@ in
       alias ls='ls --color'
     '' + (if pkgs.stdenv.isDarwin then ''
       alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
-      alias rebuild='sudo darwin-rebuild switch --flake ~/ghq/github.com/simenandre/dotfiles#default'
-      alias update='nix flake update --flake ~/ghq/github.com/simenandre/dotfiles && sudo darwin-rebuild switch --flake ~/ghq/github.com/simenandre/dotfiles#default'
+      alias rebuild='sudo darwin-rebuild switch --flake ~/ghq/simenandre.no/dotfiles#default'
+      alias update='nix flake update --flake ~/ghq/simenandre.no/dotfiles && sudo darwin-rebuild switch --flake ~/ghq/simenandre.no/dotfiles#default'
       alias nix-gc='sudo nix-collect-garbage --delete-older-than 14d && nix-collect-garbage --delete-older-than 14d && nix store gc'
     '' else "") + ''
 
@@ -221,7 +221,6 @@ in
     generate kubectl     kubectl  completion zsh
     generate helm        helm     completion zsh
     generate pulumi      pulumi   gen-completion zsh
-    generate bun         bun      completions zsh
     generate pnpm        pnpm     completion zsh
     generate deno        deno     completions zsh
     generate flyctl      flyctl   completion zsh

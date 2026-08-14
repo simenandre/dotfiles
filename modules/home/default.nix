@@ -26,6 +26,7 @@
     claude-code
     dina.packages.${pkgs.stdenv.hostPlatform.system}.default
     delta
+    forgejo-cli
     fzf
     gh
     ghq

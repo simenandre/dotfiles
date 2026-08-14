@@ -51,6 +51,8 @@
       "gpg \"ssh\"".program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
       "url \"ssh://git@codeberg.org/\"".insteadOf = "https://codeberg.org/";
+      # scp-style, not ssh://: the server rejects the absolute-path form
+      "url \"git@simenandre.no:\"".insteadOf = "https://simenandre.no/";
       commit.gpgsign = true;
     } else {});
   };

@@ -47,18 +47,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ### 4. Clone the repository
 
 The clone path is not arbitrary — the `rebuild` and `update` aliases in
-`modules/home/zsh.nix` point at `~/ghq/github.com/simenandre/dotfiles`, so
-clone it there.
+`modules/home/zsh.nix` point at `~/ghq/simenandre.no/dotfiles`, so clone it
+there.
 
 ```shell
-mkdir -p ~/ghq/github.com/simenandre
-git clone https://github.com/simenandre/dotfiles.git ~/ghq/github.com/simenandre/dotfiles
-cd ~/ghq/github.com/simenandre/dotfiles
+mkdir -p ~/ghq/simenandre.no
+git clone https://simenandre.no/dotfiles.git ~/ghq/simenandre.no/dotfiles
+cd ~/ghq/simenandre.no/dotfiles
 ```
 
 HTTPS on purpose: SSH access depends on 1Password's SSH agent, which is not
-installed yet. After the first switch, git rewrites GitHub HTTPS remotes to SSH
-(`url."ssh://git@github.com/".insteadOf`), so this remote keeps working.
+installed yet. After the first switch, git rewrites the HTTPS remote to SSH
+(`url."git@simenandre.no:".insteadOf`), so this remote keeps working.
 
 ### 5. First switch (bootstrap nix-darwin)
 
