@@ -19,6 +19,17 @@
       NSAutomaticSpellingCorrectionEnabled = false;
       # Font smoothing
       AppleFontSmoothing = 1;
+      # Dark appearance
+      AppleInterfaceStyle = "Dark";
+      # Show all file extensions
+      AppleShowAllExtensions = true;
+      # Disable two-finger swipe for back/forward navigation
+      AppleEnableSwipeNavigateWithScrolls = false;
+      # Tap to click, also honoured by the login screen
+      "com.apple.mouse.tapBehavior" = 1;
+      # Faster key repeat than the System Settings sliders allow
+      KeyRepeat = 2;
+      InitialKeyRepeat = 15;
     };
 
     dock = {
@@ -28,6 +39,12 @@
       show-process-indicators = true;
       # Wipe all default app icons from the Dock
       persistent-apps = [ ];
+      # Wipe the default Downloads stack from the Dock
+      persistent-others = [ ];
+      # Smaller Dock icons
+      tilesize = 34;
+      # Disable the pinch-to-Launchpad gesture
+      showLaunchpadGestureEnabled = false;
       # Speed up Mission Control animations
       expose-animation-duration = 0.1;
       # Remove the auto-hiding Dock delay
@@ -51,6 +68,10 @@
       FXDefaultSearchScope = "SCcf";
       # Disable warning when changing a file extension
       FXEnableExtensionChangeWarning = false;
+      # Default to list view
+      FXPreferredViewStyle = "Nlsv";
+      # Remove items from the Trash after 30 days
+      FXRemoveOldTrashItems = true;
     };
 
     screencapture = {
@@ -63,6 +84,11 @@
     trackpad = {
       # Enable tap to click for this user and the login screen
       Clicking = true;
+      # Drag windows with three fingers
+      TrackpadThreeFingerDrag = true;
+      # Three-finger drag needs the three-finger swipe gestures out of the way
+      TrackpadThreeFingerHorizSwipeGesture = 0;
+      TrackpadThreeFingerVertSwipeGesture = 0;
     };
 
 
@@ -84,6 +110,52 @@
     };
 
     CustomUserPreferences = {
+      NSGlobalDomain = {
+        # Text replacements. Declared here, so System Settings edits are
+        # overwritten on the next rebuild — add new snippets in this list.
+        NSUserDictionaryReplacementItems = [
+          {
+            on = 1;
+            replace = "ttt";
+            "with" = "Ting tar tid";
+          }
+          {
+            on = 1;
+            replace = "ept";
+            "with" = "Er på toget!";
+          }
+          {
+            on = 1;
+            replace = "ott";
+            "with" = "On the train!";
+          }
+          {
+            on = 1;
+            replace = "epv";
+            "with" = "Er på vei!";
+          }
+          {
+            on = 1;
+            replace = "omw";
+            "with" = "On my way!";
+          }
+        ];
+      };
+      "com.apple.Siri" = {
+        StatusMenuVisible = false;
+        VoiceTriggerUserEnabled = false;
+      };
+      "com.apple.assistant.support" = {
+        "Assistant Enabled" = false;
+      };
+      "com.apple.TextInputMenu" = {
+        # Hide the input source menu bar icon
+        visible = false;
+      };
+      "com.apple.controlcenter" = {
+        # Hide the Shortcuts menu bar icon
+        "NSStatusItem Visible Shortcuts" = false;
+      };
       "com.apple.print.PrintingPrefs" = {
         # Automatically quit printer app once the print jobs complete
         "Quit When Finished" = true;
