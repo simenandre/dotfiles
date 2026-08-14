@@ -4,17 +4,21 @@ My Development Setup, managed with [Nix](https://nixos.org), [nix-darwin](https:
 
 ## Quickstart
 
-### 1. Install Nix
+Setting up a new machine? Follow [INSTALL.md](INSTALL.md) — it covers the
+prerequisites (Homebrew, App Store, 1Password SSH agent) that the commands below
+assume are already in place.
+
+### 1. Install Determinate Nix
 
 ```shell
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate
 ```
 
 ### 2. Clone the repository
 
 ```shell
-git clone git@github.com:simenandre/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/simenandre/dotfiles.git ~/ghq/github.com/simenandre/dotfiles
+cd ~/ghq/github.com/simenandre/dotfiles
 ```
 
 ### 3. Apply the configuration
@@ -24,13 +28,13 @@ cd ~/dotfiles
 On first run, bootstrap nix-darwin:
 
 ```shell
-nix run nix-darwin -- switch --flake .#default
+sudo nix run nix-darwin#darwin-rebuild -- switch --flake .#default
 ```
 
 On subsequent runs:
 
 ```shell
-darwin-rebuild switch --flake .#default
+sudo darwin-rebuild switch --flake .#default
 ```
 
 #### NixOS
@@ -38,7 +42,7 @@ darwin-rebuild switch --flake .#default
 Generate hardware config and rebuild:
 
 ```shell
-sudo nixos-generate-config --show-hardware-config > modules/nixos/hardware-configuration.nix
+sudo nixos-generate-config --show-hardware-config > hosts/nixbox/hardware-configuration.nix
 sudo nixos-rebuild switch --flake .#nixbox
 ```
 
@@ -56,17 +60,24 @@ home-manager switch --flake .#simenandre@aarch64-linux
 
 ```
 flake.nix               # Entry point – inputs & all configurations
+INSTALL.md              # Full setup guide for a new machine
+hosts/
+  nixbox/
+    hardware-configuration.nix
 modules/
   darwin/
-    default.nix         # System-level configuration (nix settings, core packages)
+    default.nix          # System-level configuration (nix settings, core packages)
     homebrew.nix         # Homebrew packages (taps, brews, casks, Mac App Store)
     macos.nix            # macOS system defaults
   home/
     default.nix          # home-manager entry point (platform-aware home directory)
+    claude.nix           # Claude Code instructions and skills
     git.nix              # Git configuration (platform-aware SSH signing path)
-    zsh.nix              # Zsh configuration (zshenv, zshrc, aliases, path, extras)
+    zsh.nix              # Zsh configuration (zshenv, zshrc, aliases, path, completions)
     starship.nix         # Starship prompt
     tmux.nix             # Tmux configuration
+    lazygit.nix          # Lazygit configuration
+    twm.nix              # twm workspace manager configuration
     ghostty.nix          # Ghostty terminal configuration
   nixos/
     default.nix          # NixOS system configuration
