@@ -4,6 +4,7 @@
   imports = [
     ./homebrew.nix
     ./macos.nix
+    ./herdr-caffeinate.nix
   ];
 
   # Nix is managed by Determinate installer
@@ -41,6 +42,7 @@
     # Editors and terminal multiplexers
     neovim
     tmux
+    herdr
 
     # Shells and shell utilities
     zsh
@@ -74,7 +76,6 @@
     rustup
 
     # JavaScript runtimes and package managers
-    bun
     pnpm
     deno
 
@@ -98,7 +99,8 @@
     protoc-gen-go-grpc
 
     # Cloud and IaC tools
-    pulumi
+    # pulumi-bin over pulumi: the source-built package lags upstream by months
+    pulumi-bin
     pulumictl
     kubectl
     kubernetes-helm
@@ -107,7 +109,6 @@
     flyctl
     talosctl
     tektoncd-cli
-    runpodctl
 
     # Task runners and automation
     act
